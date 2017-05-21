@@ -33,6 +33,9 @@ public class tela_menu extends AppCompatActivity{
     private ImageView agenda;
     private ImageView marcados;
     private ImageView vacinas;
+    private ImageView alimentacao;
+    private ImageView duvidas_freq;
+    private ImageView suporte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,9 @@ public class tela_menu extends AppCompatActivity{
         agenda = (ImageView) findViewById(R.id.agenda_id);
         marcados = (ImageView) findViewById(R.id.agenda_salva_id);
         vacinas = (ImageView) findViewById(R.id.vacina_id);
+        alimentacao = (ImageView) findViewById(R.id.comida_id);
+        duvidas_freq = (ImageView) findViewById(R.id.duvida_id);
+        suporte =  (ImageView) findViewById(R.id.suporte_id);
 
         //Toolbar
         toolbar_menu.setTitle("Central Pet");
@@ -55,8 +61,6 @@ public class tela_menu extends AppCompatActivity{
         if(user != null){
             String nome = user.getDisplayName();
             String email = user.getEmail();
-
-
         } else {
             goLoginScreen();
         }
@@ -88,6 +92,31 @@ public class tela_menu extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+        //chamar a tela de alimentaçao
+        alimentacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(tela_menu.this, Alimentacao.class);
+                startActivity(intent);
+            }
+        });
+        //chamar a tela de duvidas
+        duvidas_freq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(tela_menu.this, Duvidas_freq.class);
+                startActivity(intent);
+            }
+        });
+        //Chamar a tela de suporte
+        suporte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(tela_menu.this, Suporte.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
@@ -116,7 +145,6 @@ public class tela_menu extends AppCompatActivity{
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

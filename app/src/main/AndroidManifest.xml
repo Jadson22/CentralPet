@@ -29,7 +29,10 @@
         <activity
             android:name=".activity.SalvosAgenda"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activity.Vacinas"></activity>
+        <activity android:name=".activity.Vacinas" />
+        <activity android:name=".activity.Suporte" />
+        <activity android:name=".activity.Duvidas_freq" />
+        <activity android:name=".activity.Alimentacao"></activity>
     </application>
 
 </manifest>
