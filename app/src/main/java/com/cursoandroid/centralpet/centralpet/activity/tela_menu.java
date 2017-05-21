@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.function.ToLongBiFunction;
 
+
+
 public class tela_menu extends AppCompatActivity{
 
     private AdView adView;
