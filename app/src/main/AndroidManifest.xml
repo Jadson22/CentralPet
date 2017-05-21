@@ -23,10 +23,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.tela_menu" />
-        <activity android:name=".activity.CadastroAgenda"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".activity.SalvosAgenda"
+        <activity
+            android:name=".activity.CadastroAgenda"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.SalvosAgenda"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activity.Vacinas"></activity>
     </application>
 
 </manifest>

@@ -32,6 +32,7 @@ public class tela_menu extends AppCompatActivity{
 
     private ImageView agenda;
     private ImageView marcados;
+    private ImageView vacinas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class tela_menu extends AppCompatActivity{
         toolbar_menu = (Toolbar) findViewById(R.id.toolbar_menu);
         agenda = (ImageView) findViewById(R.id.agenda_id);
         marcados = (ImageView) findViewById(R.id.agenda_salva_id);
+        vacinas = (ImageView) findViewById(R.id.vacina_id);
 
         //Toolbar
         toolbar_menu.setTitle("Central Pet");
@@ -74,6 +76,15 @@ public class tela_menu extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(tela_menu.this, SalvosAgenda.class);
+                startActivity(intent);
+            }
+        });
+
+        //chamar a tela vacinas
+        vacinas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(tela_menu.this, Vacinas.class);
                 startActivity(intent);
             }
         });
