@@ -42,11 +42,16 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.Duvidas_freq" />
         <activity android:name=".activity.Alimentacao" />
-        <activity android:name=".activity.Vacinas_Dog" />
-        <activity android:name=".activity.Vacinas_Cat" />
+        <activity
+            android:name=".activity.Vacinas_Dog"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.Vacinas_Cat"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.MeusPets" />
         <activity android:name=".activity.MeusPetsCad" />
-
+        <activity android:name=".activity.Vermifugo" />
+        <activity android:name=".activity.Anti_Pulgas"></activity>
     </application>
 
 </manifest>

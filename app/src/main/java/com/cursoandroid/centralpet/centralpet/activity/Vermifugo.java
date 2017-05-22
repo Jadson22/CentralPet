@@ -6,17 +6,17 @@ import android.support.v7.widget.Toolbar;
 
 import com.cursoandroid.centralpet.centralpet.R;
 
-public class Duvidas_freq extends AppCompatActivity {
+public class Vermifugo extends AppCompatActivity {
 
-    private Toolbar toolbar_duvidas;
+    private Toolbar toolbar_verm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_duvidas_freq);
+        setContentView(R.layout.activity_vermifugo);
 
-        toolbar_duvidas = (Toolbar) findViewById(R.id.toolbar_duvidas);
-        toolbar_duvidas.setTitle("Dúvidas Frequentes");
-        setSupportActionBar(toolbar_duvidas);
+        toolbar_verm = (Toolbar) findViewById(R.id.toolbar_verm);
+        toolbar_verm.setTitle("Vermífugo");
+        setSupportActionBar(toolbar_verm);
     }
 }

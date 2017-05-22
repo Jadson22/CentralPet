@@ -47,7 +47,6 @@ public class tela_menu extends AppCompatActivity{
         agenda = (ImageView) findViewById(R.id.agenda_id);
         marcados = (ImageView) findViewById(R.id.agenda_salva_id);
         vacinas = (ImageView) findViewById(R.id.vacina_id);
-        alimentacao = (ImageView) findViewById(R.id.comida_id);
         duvidas_freq = (ImageView) findViewById(R.id.duvida_id);
         suporte =  (ImageView) findViewById(R.id.suporte_id);
         meusPets = (ImageView) findViewById(R.id.meusPets_id);
@@ -94,14 +93,7 @@ public class tela_menu extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-        //chamar a tela de alimentaçao
-        alimentacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(tela_menu.this, Alimentacao.class);
-                startActivity(intent);
-            }
-        });
+
         //chamar a tela de duvidas
         duvidas_freq.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,4 +10,25 @@
     tools:context="com.cursoandroid.centralpet.centralpet.activity.Duvidas_freq"
     android:background="@drawable/fundo_secundario">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="false">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/toolbar"
+                android:id="@+id/toolbar_duvidas"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/espc_telas"
+                android:layout_below="@id/toolbar_duvidas">
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>

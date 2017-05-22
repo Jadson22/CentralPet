@@ -20,7 +20,20 @@
                 android:padding="@dimen/espc_telas"
                 android:layout_below="@id/toolbar_vacinasCat">
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText"
+                    android:layout_alignParentRight="true"
+                    android:hint="Pesquisar"
+                    android:padding="10dp"/>
 
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="400dp"
+                    android:id="@+id/listaVacinas"
+                    android:layout_below="@id/editText"
+                    />
 
 
             </RelativeLayout>
