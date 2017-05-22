@@ -3,11 +3,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cursoandroid.centralpet.centralpet.activity.Vacinas"
     android:background="@drawable/fundo_secundario">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/toolbar"
+                android:id="@+id/toolbar_vacinas"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/espc_telas"
+    android:layout_below="@id/toolbar_vacinas">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qual o tipo de seu pet?"
+        android:textSize="@dimen/txt_cad"
+        android:textColor="#000"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgdog"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/icone_cachorro" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgcat"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/icone_gato" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cachorro"
+        android:id="@+id/textView10"
+        android:layout_below="@id/imgdog"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
+        android:textColor="#000"
+        android:textSize="@dimen/txt_cad"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gato"
+        android:id="@+id/textView11"
+        android:layout_below="@id/imgcat"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="90dp"
+        android:textColor="#000"
+        android:textSize="@dimen/txt_cad"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
