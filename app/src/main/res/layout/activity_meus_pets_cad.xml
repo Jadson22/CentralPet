@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cursoandroid.centralpet.centralpet.activity.MeusPetsCad"
+    android:background="@drawable/fundo_secundario">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/toolbar"
+                android:id="@+id/toolbar_meusPets_cad"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/espCad"
+                android:orientation="vertical"
+                android:layout_below="@id/toolbar_meusPets_cad"
+                android:id="@+id/LL1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Nome:"
+                    android:id="@+id/textView"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/txt_cad" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editNome"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Raça:"
+                    android:id="@+id/textView2"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/txt_cad" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editRaça"
+                    android:inputType="textImeMultiLine"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Data de Nascimento: "
+                    android:id="@+id/textView3"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/txt_cad" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editDataNascimento"
+                    android:inputType="textImeMultiLine"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/LL1"
+                    android:layout_centerHorizontal="true">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cadastrar"
+                    android:textColor="#000"
+                    android:background="@drawable/fundo_caixa_texto"/>
+                </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

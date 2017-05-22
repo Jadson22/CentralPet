@@ -161,6 +161,20 @@
             android:layout_below="@+id/suporte_id"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="50dp"/>
+
+        <ImageView
+            android:layout_width="@dimen/tam_icon"
+            android:layout_height="@dimen/tam_icon"
+            android:background="@drawable/meuspetsicon"
+            android:id="@+id/meusPets_id"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meus Pets"
+            android:textColor="#000"
+            android:layout_below="@+id/meusPets_id"
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
             </RelativeLayout>
     </ScrollView>

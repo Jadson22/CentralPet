@@ -36,6 +36,7 @@ public class tela_menu extends AppCompatActivity{
     private ImageView alimentacao;
     private ImageView duvidas_freq;
     private ImageView suporte;
+    private ImageView meusPets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class tela_menu extends AppCompatActivity{
         alimentacao = (ImageView) findViewById(R.id.comida_id);
         duvidas_freq = (ImageView) findViewById(R.id.duvida_id);
         suporte =  (ImageView) findViewById(R.id.suporte_id);
+        meusPets = (ImageView) findViewById(R.id.meusPets_id);
 
         //Toolbar
         toolbar_menu.setTitle("Central Pet");
@@ -113,6 +115,14 @@ public class tela_menu extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(tela_menu.this, Suporte.class);
+                startActivity(intent);
+            }
+        });
+        //chamar a tela meus Pets
+        meusPets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(tela_menu.this, MeusPets.class);
                 startActivity(intent);
             }
         });
