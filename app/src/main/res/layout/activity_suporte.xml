@@ -25,11 +25,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="Está com algum problema? Sugestões? Conte-nos, deixe seu feedback!"
+        android:id="@+id/textoproblema"
+        android:layout_marginTop="70dp"
+        android:textSize="@dimen/txt_cad"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cxsuporte"
+        android:layout_below="@+id/textoproblema"
+        android:layout_marginTop="10dp"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:scrollbars="vertical"
+        android:background="@drawable/fundo_caixa_texto"
+        android:textColor="#000"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar feedback"
+        android:id="@+id/btfeedback"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/cxsuporte"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="6dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email para contato: appcentralpet@gmail.com"
         android:id="@+id/textView9"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="62dp" />
+        android:layout_below="@+id/btfeedback"
+        android:layout_marginTop="31dp"
+        android:textSize="@dimen/txt_cad"
+        android:textColor="#000"/>
 
 </RelativeLayout>
