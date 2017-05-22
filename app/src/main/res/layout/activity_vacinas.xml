@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imgdog"
         android:layout_marginTop="35dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="35dp"
         android:background="@drawable/icone_cachorro" />
 
     <ImageView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imgcat"
         android:layout_marginTop="35dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="35dp"
         android:layout_alignParentRight="true"
         android:background="@drawable/icone_gato" />
 
