@@ -7,4 +7,5 @@
     <dimen name="espCad">7dp</dimen>
     <dimen name="txt_cad">16dp</dimen>
     <dimen name="espc_telas">5dp</dimen>
+    <dimen name="txtexib">18dp</dimen>
 </resources>

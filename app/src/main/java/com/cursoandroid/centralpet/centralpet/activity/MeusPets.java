@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class MeusPets extends AppCompatActivity {
 
     private Toolbar toolbarMeusPets;
     private TextView textAdd;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,15 @@ public class MeusPets extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(MeusPets.this, MeusPetsCad.class);
+                startActivity(it);
+            }
+        });
+
+        btn = (Button) findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MeusPets.this, Modelo.class);
                 startActivity(it);
             }
         });

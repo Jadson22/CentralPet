@@ -51,7 +51,8 @@
         <activity android:name=".activity.MeusPets" />
         <activity android:name=".activity.MeusPetsCad" />
         <activity android:name=".activity.Vermifugo" />
-        <activity android:name=".activity.Anti_Pulgas"></activity>
+        <activity android:name=".activity.Anti_Pulgas" />
+        <activity android:name=".activity.Modelo"></activity>
     </application>
 
 </manifest>

@@ -6,17 +6,17 @@ import android.support.v7.widget.Toolbar;
 
 import com.cursoandroid.centralpet.centralpet.R;
 
-public class Anti_Pulgas extends AppCompatActivity {
+public class Modelo extends AppCompatActivity {
 
-    private Toolbar toolbar_anti;
+    private Toolbar toolbarmodelo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anti__pulgas);
+        setContentView(R.layout.activity_modelo);
 
-        toolbar_anti = (Toolbar) findViewById(R.id.toolbar_anti);
-        toolbar_anti.setTitle("Anti-pulgas");
-        setSupportActionBar(toolbar_anti);
+        toolbarmodelo = (Toolbar) findViewById(R.id.toolbar_modelo);
+        toolbarmodelo.setTitle("Meus Pets");
+        setSupportActionBar(toolbarmodelo);
     }
 }
