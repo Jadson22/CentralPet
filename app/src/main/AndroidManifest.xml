@@ -65,7 +65,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCoWjoTEP8H--Hw7kQQ-VE-7c9KZBEgrd4" />
+            android:value="AIzaSyDEM_ko9vfmSwudvp6LTkDp3flGuYemAy8" />
 
         <activity
             android:name=".activity.MapaClinicaActivity"
