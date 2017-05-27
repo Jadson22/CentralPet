@@ -20,7 +20,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.function.ToLongBiFunction;
+
 
 
 

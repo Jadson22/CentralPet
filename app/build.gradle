@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.cursoandroid.centralpet.centralpet"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         multiDexEnabled true;
@@ -26,7 +26,7 @@ dependencies {
 
 
     compile 'com.google.firebase:firebase-core:9.6.1'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.google.firebase:firebase-ads:9.6.1'
     compile 'com.google.firebase:firebase-auth:9.6.1'
     compile 'com.facebook.android:facebook-android-sdk:[4.20.0]'
