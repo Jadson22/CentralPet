@@ -99,7 +99,7 @@
         <ImageView
             android:layout_width="@dimen/tam_icon"
             android:layout_height="@dimen/tam_icon"
-            android:id="@+id/map_id"
+            android:id="@+id/mapaID"
             android:background="@drawable/map"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="50dp"/>
@@ -108,7 +108,7 @@
             android:layout_height="wrap_content"
             android:text="Clínicas"
             android:textColor="#000000"
-            android:layout_below="@+id/map_id"
+            android:layout_below="@+id/mapaID"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="50dp"/>
 
