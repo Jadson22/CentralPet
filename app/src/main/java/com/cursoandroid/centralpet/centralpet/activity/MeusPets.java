@@ -17,7 +17,6 @@ import com.cursoandroid.centralpet.centralpet.R;
 public class MeusPets extends AppCompatActivity {
 
     private Toolbar toolbarMeusPets;
-    private TextView textAdd;
     Button btn;
 
     @Override
@@ -29,14 +28,6 @@ public class MeusPets extends AppCompatActivity {
         toolbarMeusPets.setTitle("Meus Pets");
         setSupportActionBar(toolbarMeusPets);
 
-        textAdd = (TextView) findViewById(R.id.textoAdd);
-        textAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(MeusPets.this, MeusPetsCad.class);
-                startActivity(it);
-            }
-        });
 
         btn = (Button) findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +37,25 @@ public class MeusPets extends AppCompatActivity {
                 startActivity(it);
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_meuspets, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.add:
+                Intent intent = new Intent(this, MeusPetsCad.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

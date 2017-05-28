@@ -82,7 +82,7 @@ public class SalvosAgenda extends AppCompatActivity implements AdapterView.OnIte
 
         switch (item.getItemId()){
             case R.id.adicionar:
-                Intent intent = new Intent(this, CadastroAgenda.class);
+                Intent intent = new Intent(this, Vermifugo.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -95,7 +95,7 @@ public class SalvosAgenda extends AppCompatActivity implements AdapterView.OnIte
 
         Compromissos compromissos = adpComp.getItem(i);
 
-        Intent it = new Intent(this, CadastroAgenda.class);
+        Intent it = new Intent(this, PerfilPet.class);
         it.putExtra("COMPROMISSO", compromissos);
         startActivityForResult(it, 0);
 
@@ -104,7 +104,7 @@ public class SalvosAgenda extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onClick(View view) {
-        Intent it = new Intent(this, CadastroAgenda.class);
+        Intent it = new Intent(this, PerfilPet.class);
         startActivityForResult(it, 0);
     }
 
