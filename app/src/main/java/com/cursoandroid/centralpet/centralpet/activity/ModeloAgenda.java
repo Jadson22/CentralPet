@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.cursoandroid.centralpet.centralpet.R;
@@ -15,7 +16,7 @@ import com.cursoandroid.centralpet.centralpet.activity.bancodados.DataBase;
 import com.cursoandroid.centralpet.centralpet.activity.dominio.RepositorioComp;
 import com.cursoandroid.centralpet.centralpet.activity.dominio.entidades.Compromissos;
 
-public class PerfilPet extends AppCompatActivity {
+public class ModeloAgenda extends AppCompatActivity {
 
     private TextView nome, compromisso, tipo, outro, data, hora, local, obs;
     private Toolbar toolbarperfil;
@@ -24,6 +25,8 @@ public class PerfilPet extends AppCompatActivity {
     private SQLiteDatabase conn;
     private RepositorioComp repositorioComp;
     private Compromissos compromissos;
+
+    private ArrayAdapter<Compromissos> adpComp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,11 +82,12 @@ public class PerfilPet extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()){
             case R.id.edit:
-                Intent intent = new Intent(PerfilPet.this, CadastroAgenda.class);
-                startActivity(intent);
+                Intent intent = new Intent(ModeloAgenda.this, CadastroAgenda.class);
+                intent.putExtra("COMPROMISSO", compromissos);
+                startActivityForResult(intent, 0);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

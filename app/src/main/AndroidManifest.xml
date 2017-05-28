@@ -69,7 +69,7 @@
         <activity
             android:name=".activity.MapaClinicaActivity"
             android:label="@string/title_activity_mapa_clinica" />
-        <activity android:name=".activity.PerfilPet"></activity>
+        <activity android:name=".activity.ModeloAgenda"></activity>
     </application>
 
 </manifest>
