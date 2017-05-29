@@ -7,28 +7,22 @@
     android:background="@drawable/fundo_secundario">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <include layout="@layout/toolbar"
                 android:id="@+id/toolbar_meusPets"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/espc_telas">
+                android:padding="@dimen/espc_telas"
+                android:layout_below="@id/toolbar_meusPets">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="teste"
-                    android:id="@+id/btn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginLeft="39dp"
-                    android:layout_marginStart="39dp"
-                    android:layout_marginTop="109dp" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:id="@+id/listView"/>
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
