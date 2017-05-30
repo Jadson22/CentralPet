@@ -43,6 +43,15 @@ public class MeusPetsCad extends AppCompatActivity {
         edtraca = (EditText) findViewById(R.id.editRaca);
         edtdatanasc = (EditText) findViewById(R.id.editDataNascimento);
 
+
+        Bundle bundle =  getIntent().getExtras();
+        if((bundle != null) && (bundle.containsKey("PERFIL"))){
+            perfil = (Perfil)bundle.getSerializable("PERFIL");
+            preencheDados2();
+        }else{
+            perfil = new Perfil();
+        }
+
         try {
             dataBase2 = new DataBase2(this);
             con = dataBase2.getWritableDatabase();
@@ -66,6 +75,9 @@ public class MeusPetsCad extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_cad_perfil, menu);
 
+        if(perfil.getId() != 0 )
+        menu.getItem(0).setVisible(true);
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -74,37 +86,61 @@ public class MeusPetsCad extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.salvar:
-                if(perfil == null){
-                    inserir();
-                }
+                salvar();
                 finish();
                 break;
 
             case R.id.excluir:
+                excluir();
+                finish();
                 break;
 
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void inserir(){
+    private void preencheDados2(){
+
+        edtnome.setText(perfil.getNome());
+        edtraca.setText(perfil.getRaca());
+        edtdatanasc.setText(null);
+    }
+
+    private void excluir(){
+
+     try{
+
+         repositorioPerfil.excluir(perfil.getId());
+    }catch (Exception ex){
+
+        AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+        dlg.setMessage("erro ao inserir os dados " + ex.getMessage());
+        dlg.setNeutralButton("ok", null);
+        dlg.show();
+    }
+    }
+
+    private void salvar(){
 
         try {
             perfil = new Perfil();
 
             perfil.setNome(edtnome.getText().toString());
             perfil.setRaca(edtraca.getText().toString());
-            Date date = new Date();
+            //Date date = new Date();
             perfil.setDatanasc(null);
 
+            if(perfil.getId() == 0)
             repositorioPerfil.inserir(perfil);
+            else
+                repositorioPerfil.alterar2(perfil);
+
         }catch (Exception ex){
 
         AlertDialog.Builder dlg = new AlertDialog.Builder(this);
         dlg.setMessage("erro ao inserir os dados " + ex.getMessage());
         dlg.setNeutralButton("ok", null);
         dlg.show();
-
     }
     }
 }

@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +25,7 @@ import com.cursoandroid.centralpet.centralpet.activity.dominio.RepositorioComp;
 import com.cursoandroid.centralpet.centralpet.activity.dominio.RepositorioPerfil;
 import com.cursoandroid.centralpet.centralpet.activity.dominio.entidades.Perfil;
 
-public class MeusPets extends AppCompatActivity {
+public class MeusPets extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private Toolbar toolbarMeusPets;
     private ListView lstPet;
@@ -44,6 +45,7 @@ public class MeusPets extends AppCompatActivity {
         setSupportActionBar(toolbarMeusPets);
 
         lstPet = (ListView) findViewById(R.id.listView);
+        lstPet.setOnItemClickListener(this);
 
         try {
             dataBase2 = new DataBase2(this);
@@ -92,5 +94,22 @@ public class MeusPets extends AppCompatActivity {
         adpPerfil = repositorioPerfil.buscaPerfil(this);
 
         lstPet.setAdapter(adpPerfil);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+        Perfil perfil = adpPerfil.getItem(i);
+
+        Intent intent = new Intent(this, MeusPetsCad.class);
+        intent.putExtra("PERFIL", perfil);
+        startActivityForResult(intent, 0);
+
+
     }
 }

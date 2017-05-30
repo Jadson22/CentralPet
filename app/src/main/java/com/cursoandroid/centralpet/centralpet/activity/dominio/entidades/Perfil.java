@@ -1,11 +1,12 @@
 package com.cursoandroid.centralpet.centralpet.activity.dominio.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by L Moraes on 29/05/2017.
  */
-public class Perfil {
+public class Perfil implements Serializable{
 
     private long id;
     private String nome;
@@ -13,7 +14,7 @@ public class Perfil {
     private Date datanasc;
 
     public Perfil(){
-
+        id = 0;
     }
 
 

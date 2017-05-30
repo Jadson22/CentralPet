@@ -23,14 +23,31 @@ public class RepositorioPerfil {
         this.con = con;
     }
 
-    public void inserir(Perfil perfil){
+    private ContentValues preencheContentValues2(Perfil perfil){
+
         ContentValues values = new ContentValues();
         values.put("NOME", perfil.getNome());
         values.put("RACA", perfil.getRaca());
-        values.put("DATA", perfil.getDatanasc().getTime());
+        values.put("DATA", "22");
 
+        return values;
+    }
+
+
+    public void alterar2 (Perfil perfil){
+
+        ContentValues values = preencheContentValues2(perfil);
+        con.update("PERFIL", values, "_id = ?", new String[]{String.valueOf(perfil.getId())});
+    }
+
+    public void inserir(Perfil perfil){
+
+        ContentValues values = preencheContentValues2(perfil);
         con.insertOrThrow("PERFIL", null, values);
+    }
 
+    public void excluir(long id){
+        con.delete("PERFIL", "_id = ?", new String[]{String.valueOf(id)});
     }
 
 
@@ -46,6 +63,7 @@ public class RepositorioPerfil {
             do {
 
                 Perfil perfil = new Perfil();
+                perfil.setId(cursor.getLong(0));
                 perfil.setNome(cursor.getString(1));
                 perfil.setRaca(cursor.getString(2));
                 perfil.setDatanasc(null);
