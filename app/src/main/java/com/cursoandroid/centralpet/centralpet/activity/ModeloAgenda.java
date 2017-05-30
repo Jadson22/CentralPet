@@ -31,7 +31,7 @@ public class ModeloAgenda extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_pet);
+        setContentView(R.layout.activity_modelo_agenda);
 
         toolbarperfil = (Toolbar) findViewById(R.id.toolbar_perfil);
         toolbarperfil.setTitle("Central Pet");

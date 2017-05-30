@@ -106,7 +106,7 @@ public class MeusPets extends AppCompatActivity implements View.OnClickListener,
 
         Perfil perfil = adpPerfil.getItem(i);
 
-        Intent intent = new Intent(this, MeusPetsCad.class);
+        Intent intent = new Intent(this, Modelo.class);
         intent.putExtra("PERFIL", perfil);
         startActivityForResult(intent, 0);
 

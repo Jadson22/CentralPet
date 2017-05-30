@@ -102,8 +102,6 @@ public class CadastroAgenda extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_cadastro, menu);
 
-
-
         if(compromissos.getId() != 0)
         menu.getItem(0).setVisible(true);
 
