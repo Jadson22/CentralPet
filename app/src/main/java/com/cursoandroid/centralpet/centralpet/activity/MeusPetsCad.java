@@ -95,7 +95,7 @@ public class MeusPetsCad extends AppCompatActivity {
             perfil.setNome(edtnome.getText().toString());
             perfil.setRaca(edtraca.getText().toString());
             Date date = new Date();
-            perfil.setDatanasc(date);
+            perfil.setDatanasc(null);
 
             repositorioPerfil.inserir(perfil);
         }catch (Exception ex){

@@ -48,7 +48,7 @@ public class RepositorioPerfil {
                 Perfil perfil = new Perfil();
                 perfil.setNome(cursor.getString(1));
                 perfil.setRaca(cursor.getString(2));
-                perfil.setDatanasc(new Date(cursor.getLong(3)));
+                perfil.setDatanasc(null);
 
                 adpPerfil.add(perfil);
 
