@@ -20,10 +20,6 @@ import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
-
-
-
 public class tela_menu extends AppCompatActivity{
 
     private AdView adView;
@@ -33,7 +29,6 @@ public class tela_menu extends AppCompatActivity{
     private ImageView agenda;
     private ImageView marcados;
     private ImageView vacinas;
-    private ImageView alimentacao;
     private ImageView duvidas_freq;
     private ImageView suporte;
     private ImageView meusPets;
