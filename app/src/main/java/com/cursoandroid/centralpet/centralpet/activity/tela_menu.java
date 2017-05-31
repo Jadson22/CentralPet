@@ -86,16 +86,16 @@ public class tela_menu extends AppCompatActivity{
         vacinas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tela_menu.this, Vacinas.class);
+                Intent intent = new Intent(tela_menu.this, ListVacinas.class);
                 startActivity(intent);
             }
         });
 
-        //chamar a tela de duvidas
+        //chamar a tela de duvidas / vacinas de cao ou gato
         duvidas_freq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tela_menu.this, Duvidas_freq.class);
+                Intent intent = new Intent(tela_menu.this, Vacinas.class);
                 startActivity(intent);
             }
         });
@@ -123,7 +123,6 @@ public class tela_menu extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-
 
 
 
