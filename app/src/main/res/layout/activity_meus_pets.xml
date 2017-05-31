@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cursoandroid.centralpet.centralpet.activity.MeusPets"
-    android:background="@drawable/fundo_secundario">
+    android:background="@drawable/fundo_principal">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

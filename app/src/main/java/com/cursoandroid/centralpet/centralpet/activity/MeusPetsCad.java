@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ public class MeusPetsCad extends AppCompatActivity {
 
     private Toolbar toolbarMeusPetsCad;
     private EditText edtnome, edtraca, edtdatanasc;
+    private Button btncadastrar;
 
     private DataBase2 dataBase2;
     private SQLiteDatabase con;
@@ -42,6 +45,15 @@ public class MeusPetsCad extends AppCompatActivity {
         edtnome = (EditText) findViewById(R.id.editNome);
         edtraca = (EditText) findViewById(R.id.editRaca);
         edtdatanasc = (EditText) findViewById(R.id.editDataNascimento);
+
+        btncadastrar = (Button) findViewById(R.id.btncadastrar);
+        btncadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                salvar();
+                finish();
+            }
+        });
 
 
         Bundle bundle =  getIntent().getExtras();
