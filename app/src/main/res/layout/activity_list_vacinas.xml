@@ -3,11 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cursoandroid.centralpet.centralpet.activity.Duvidas_freq"
+    tools:context="com.cursoandroid.centralpet.centralpet.activity.ListVacinas"
     android:background="@drawable/fundo_principal">
 
     <ScrollView
@@ -17,17 +13,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <include layout="@layout/toolbar"
-                android:id="@+id/toolbar_duvidas"/>
-            <RelativeLayout
+                android:id="@+id/toolbar_listVacinas"/>
+
+            <ListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/espc_telas"
-                android:layout_below="@id/toolbar_duvidas">
+                android:id="@+id/listView2"
+                android:layout_below="@id/toolbar_listVacinas"/>
 
 
-
-            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
-
 </RelativeLayout>
