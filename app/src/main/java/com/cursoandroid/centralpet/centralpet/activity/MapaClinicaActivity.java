@@ -2,18 +2,28 @@ package com.cursoandroid.centralpet.centralpet.activity;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapaClinicaActivity extends FragmentActivity implements GoogleMap.OnMarkerClickListener, OnMapReadyCallback {
+
+    private static final LatLng mundoDosBichos = new LatLng(-7.198299, -48.216621);
 
     private GoogleMap mMap;
+
+
+    private Marker mMundoDosBichos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,24 +36,39 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                .title("central  pet"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    @Override
+    public void onMapReady(GoogleMap map){
+        mMap = map;
+
+        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.setMinZoomPreference(11.0f);
+        mMap.setMaxZoomPreference(19.0f);
+    //mundo dos bichos
+        mMundoDosBichos = mMap.addMarker(new MarkerOptions()
+                .position(mundoDosBichos)
+                .title("Mundo dos Bichos")
+                .snippet("Clínica Veterinária e Pet Shop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        mMundoDosBichos.setTag(0);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mundoDosBichos));
+
+
+        mMap.setOnMarkerClickListener(this);
+
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+
+        Integer clickCount = (Integer) marker.getTag();
+
+        if (clickCount != null) {
+            Toast.makeText(this,
+                            " Visite nosso parceiro ",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        return false;
     }
 }
