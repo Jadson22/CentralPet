@@ -64,9 +64,7 @@ public class MapaClinicaActivity extends FragmentActivity implements GoogleMap.O
         Integer clickCount = (Integer) marker.getTag();
 
         if (clickCount != null) {
-            Toast.makeText(this,
-                            " Visite nosso parceiro ",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this," Visite nosso parceiro ", Toast.LENGTH_SHORT).show();
         }
 
         return false;
