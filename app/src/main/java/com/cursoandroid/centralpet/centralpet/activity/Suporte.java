@@ -1,19 +1,20 @@
 package com.cursoandroid.centralpet.centralpet.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.cursoandroid.centralpet.centralpet.R;
 
 public class Suporte extends AppCompatActivity {
 
     private Toolbar toolbar_suporte;
-
-    private EditText cxsuporte;
-    private Button btfeedback;
+    TextView txtg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +25,18 @@ public class Suporte extends AppCompatActivity {
         toolbar_suporte.setTitle("Suporte");
         setSupportActionBar(toolbar_suporte);
 
-        cxsuporte = (EditText) findViewById(R.id.cxsuporte);
-        btfeedback = (Button) findViewById(R.id.btfeedback);
+        txtg = (TextView) findViewById(R.id.txt);
+        txtg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(Intent.ACTION_SEND);
+                it.setType("text/plain");
+                it.putExtra(Intent.EXTRA_TEXT, "Baixe o aplicativo Central Pet!");
+                startActivity(it);
+            }
+        });
+
+
 
     }
 }

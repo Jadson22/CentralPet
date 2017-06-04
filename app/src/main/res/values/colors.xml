@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000</color>
+    <color name="txtgeral">#000</color>
 
 
 </resources>
