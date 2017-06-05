@@ -53,6 +53,6 @@ public class Perfil implements Serializable{
     @Override
     public String toString(){
 
-        return "Nome: " + nome +"\nRaça: " + raca + "\nData Nascimento: " + datanasc;
+        return "Nome: " + nome ;
     }
 }
