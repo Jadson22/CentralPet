@@ -95,7 +95,7 @@ public class tela_menu extends AppCompatActivity{
         duvidas_freq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tela_menu.this, Vacinas.class);
+                Intent intent = new Intent(tela_menu.this, Duvidas_freq.class);
                 startActivity(intent);
             }
         });

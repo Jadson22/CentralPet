@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cursoandroid.centralpet.centralpet.activity.Duvidas_freq"
-    android:background="@drawable/fundo_principal">
+    tools:context="com.cursoandroid.centralpet.centralpet.activity.Duvidas_freq">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,15 +17,19 @@
             android:layout_height="match_parent">
             <include layout="@layout/toolbar"
                 android:id="@+id/toolbar_duvidas"/>
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="@dimen/espc_telas"
-                android:layout_below="@id/toolbar_duvidas">
+                android:layout_below="@id/toolbar_duvidas"
+                android:orientation="horizontal">
 
+                <ExpandableListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lst_view"/>
 
-
-            </RelativeLayout>
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 
