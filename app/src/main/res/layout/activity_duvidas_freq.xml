@@ -7,30 +7,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cursoandroid.centralpet.centralpet.activity.Duvidas_freq">
+    tools:context="com.cursoandroid.centralpet.centralpet.activity.Duvidas_freq"
+    android:background="@drawable/fundo_principal">
 
-    <ScrollView
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_duvidas"/>
+
+    <ExpandableListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <include layout="@layout/toolbar"
-                android:id="@+id/toolbar_duvidas"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/espc_telas"
-                android:layout_below="@id/toolbar_duvidas"
-                android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:id="@+id/lst_view"
+        android:layout_below="@+id/toolbar_duvidas"/>
 
-                <ExpandableListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/lst_view"/>
-
-            </LinearLayout>
-        </RelativeLayout>
-    </ScrollView>
 
 </RelativeLayout>

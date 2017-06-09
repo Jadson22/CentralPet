@@ -88,10 +88,8 @@ public class adaptador_lst extends BaseExpandableListAdapter {
         }
 
         TextView tvGrupo = (TextView) view.findViewById(R.id.tvGrupo);
-        TextView tvQtde = (TextView) view.findViewById(R.id.tvQtde);
 
         tvGrupo.setText((String) getGroup(i));
-        tvQtde.setText(String.valueOf(getChildrenCount(i)));
 
         return view;
     }

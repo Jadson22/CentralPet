@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ffffffff">
+    android:background="#4FC3F7">
 
     <TextView
         android:id="@+id/tvGrupo"
@@ -16,14 +16,6 @@
         android:text="Grupo"
         android:textColor="@android:color/black" />
 
-    <TextView
-        android:id="@+id/tvQtde"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_weight="2"
-        android:gravity="right"
-        android:text="Qtde"
-        android:textColor="@android:color/black" />
+
 
 </LinearLayout>

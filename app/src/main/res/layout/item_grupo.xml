@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ff9b999a">
+    android:background="#FF85D4F9">
 
     <TextView
         android:id="@+id/tvItem"

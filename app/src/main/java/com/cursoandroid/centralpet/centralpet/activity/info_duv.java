@@ -6,9 +6,9 @@ package com.cursoandroid.centralpet.centralpet.activity;
 public class info_duv {
 
     private String nome;
-    private Double valor;
+    private String valor;
 
-    public info_duv(String nome, Double valor) {
+    public info_duv(String nome, String valor) {
         this.nome = nome;
         this.valor = valor;
     }
@@ -21,11 +21,11 @@ public class info_duv {
         this.nome = nome;
     }
 
-    public Double getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 }

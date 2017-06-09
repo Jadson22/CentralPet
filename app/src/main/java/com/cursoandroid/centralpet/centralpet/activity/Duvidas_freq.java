@@ -29,34 +29,47 @@ public class Duvidas_freq extends AppCompatActivity {
 
         //cria os grupos
         List<String> lstgrupos = new ArrayList<>();
-        lstgrupos.add("Vacinas");
+        lstgrupos.add("Vacinas - Cães");
+        lstgrupos.add("Vacinas - Gatos");
         lstgrupos.add("Doenças");
         lstgrupos.add("Alimentação");
 
         //cria os itens de cada grupo
-        List<info_duv> lstVacinas = new ArrayList<>();
-        lstVacinas.add(new info_duv("Vermífugo", null));
-        lstVacinas.add(new info_duv("V8", null));
-        lstVacinas.add(new info_duv("Gripe", null));
+        List<info_duv> lstVacinasCaes = new ArrayList<>();
+        lstVacinasCaes.add(new info_duv("Vermífugo", ""));
+        lstVacinasCaes.add(new info_duv("Anti-pulgas", ""));
+        lstVacinasCaes.add(new info_duv("V8 ou V10", ""));
+        lstVacinasCaes.add(new info_duv("Tosse", ""));
+        lstVacinasCaes.add(new info_duv("Anti-rábica", ""));
+        lstVacinasCaes.add(new info_duv("Giardíase", ""));
+        lstVacinasCaes.add(new info_duv("Gripe canina", ""));
+
+        List<info_duv> lstVacinasGatos = new ArrayList<>();
+        lstVacinasGatos.add(new info_duv("Vermífugo", ""));
+        lstVacinasGatos.add(new info_duv("Anti-pulgas", ""));
+        lstVacinasGatos.add(new info_duv("V4", ""));
+        lstVacinasGatos.add(new info_duv("Anti-rábica", ""));
+        lstVacinasGatos.add(new info_duv("Quadrupla felina", ""));
 
         //cria os itens de cada grupo
         List<info_duv> lstDoencas = new ArrayList<>();
-        lstDoencas.add(new info_duv("Pulgas", null));
-        lstDoencas.add(new info_duv("Ferida", null));
-        lstDoencas.add(new info_duv("Febre", null));
-        lstDoencas.add(new info_duv("Conjuntive", null));
+        lstDoencas.add(new info_duv("Pulgas", ""));
+        lstDoencas.add(new info_duv("Ferida", ""));
+        lstDoencas.add(new info_duv("Febre", ""));
+        lstDoencas.add(new info_duv("Conjuntive", ""));
 
 
         //cria os itens de cada grupo
         List<info_duv> lstAliment = new ArrayList<>();
-        lstAliment.add(new info_duv("Pedgree", null));
-        lstAliment.add(new info_duv("Vitamax", null));
+        lstAliment.add(new info_duv("Pedgree", ""));
+        lstAliment.add(new info_duv("Vitamax", ""));
 
         // cria o "relacionamento" dos grupos com seus itens
         HashMap<String, List<info_duv>> lstItensGrupo = new HashMap<>();
-        lstItensGrupo.put(lstgrupos.get(0), lstVacinas);
-        lstItensGrupo.put(lstgrupos.get(1), lstDoencas);
-        lstItensGrupo.put(lstgrupos.get(2), lstAliment);
+        lstItensGrupo.put(lstgrupos.get(0), lstVacinasCaes);
+        lstItensGrupo.put(lstgrupos.get(1), lstVacinasGatos);
+        lstItensGrupo.put(lstgrupos.get(2), lstDoencas);
+        lstItensGrupo.put(lstgrupos.get(3), lstAliment);
 
         // cria um adaptador (BaseExpandableListAdapter) com os dados acima
         adaptador_lst adaptador = new adaptador_lst(this, lstgrupos, lstItensGrupo);
