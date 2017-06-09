@@ -128,7 +128,7 @@ public class MapaClinicaActivity extends FragmentActivity implements  OnMapReady
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
 
         //stop location updates
         if (mGoogleApiClient != null) {
