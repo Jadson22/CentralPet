@@ -55,13 +55,13 @@ public class tela_menu extends AppCompatActivity{
 
 
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user != null){
-            String nome = user.getDisplayName();
-            String email = user.getEmail();
-        } else {
-            goLoginScreen();
-        }
+       // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+       // if(user != null){
+        //    String nome = user.getDisplayName();
+        //    String email = user.getEmail();
+       // } else {
+        //    goLoginScreen();
+        //}
 
 
         //chamar a agenda
@@ -134,17 +134,17 @@ public class tela_menu extends AppCompatActivity{
         adView.loadAd(adRequest);
 
     }
-    private void goLoginScreen(){
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
+    //private void goLoginScreen(){
+     //   Intent intent = new Intent(this, MainActivity.class);
+     //   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+     //   startActivity(intent);
+    //}
 
-    public void logout(View view){
-        FirebaseAuth.getInstance().signOut();
-        LoginManager.getInstance().logOut();
-        goLoginScreen();
-    }
+   // public void logout(View view){
+     //   FirebaseAuth.getInstance().signOut();
+     //   LoginManager.getInstance().logOut();
+     //   goLoginScreen();
+    //}
 
     //toolbar
     @Override
@@ -155,20 +155,20 @@ public class tela_menu extends AppCompatActivity{
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_deslogar:
-                deslogar_usuario();
-                return true;
-            default:
-            return super.onOptionsItemSelected(item);
-        }
-    }
+        //switch (item.getItemId()) {
+        //case R.id.action_deslogar:
+        // deslogar_usuario();
+        return true;
+        // default:
+        //  return super.onOptionsItemSelected(item);
+        //}
 
-    private void deslogar_usuario(){
-        FirebaseAuth.getInstance().signOut();
-        LoginManager.getInstance().logOut();
-        goLoginScreen();
     }
+        //private void deslogar_usuario(){
+        //FirebaseAuth.getInstance().signOut();
+        // LoginManager.getInstance().logOut();
+        // goLoginScreen();
+        //}
 
 }
 
