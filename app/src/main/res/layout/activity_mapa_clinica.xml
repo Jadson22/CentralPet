@@ -13,18 +13,18 @@ tools:context="com.cursoandroid.centralpet.centralpet.activity.MapsActivity"/>
 
 
     <Button
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:text="Clinicas Veterinárias"
-        android:id="@+id/Clinica"
+        android:layout_width="98dp"
+        android:layout_height="67dp"
+        android:text="Pet Shop"
+        android:id="@+id/PetShop"
         android:layout_gravity="right|bottom"
         android:background="#0421f9" />
 
     <Button
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:text="Pet Shop"
-        android:id="@+id/PetShop"
+        android:layout_width="99dp"
+        android:layout_height="61dp"
+        android:text="Clinicas Veterinárias"
+        android:id="@+id/Clinica"
         android:layout_gravity="left|bottom"
         android:background="#0421f9" />
 </FrameLayout>
