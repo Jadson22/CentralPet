@@ -85,15 +85,6 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -115,12 +106,12 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
 
         final Button btnClinica = (Button) findViewById(R.id.Clinica);
         btnClinica.setOnClickListener(new View.OnClickListener() {
-            String ClinicaVeterinaria = "Clinica";
+            String veterinary_care  = "Clinica";
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
                 mMap.clear();
-                String url = getUrl(latitude, longitude, ClinicaVeterinaria);
+                String url = getUrl(latitude, longitude, veterinary_care);
                 Object[] DataTransfer = new Object[2];
                 DataTransfer[0] = mMap;
                 DataTransfer[1] = url;
@@ -133,12 +124,12 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
 
         Button btnPetShop = (Button) findViewById(R.id.PetShop);
         btnPetShop.setOnClickListener(new View.OnClickListener() {
-            String PetShop = "PetShop";
+            String pet_store = "PetShop";
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
                 mMap.clear();
-                String url = getUrl(latitude, longitude, PetShop);
+                String url = getUrl(latitude, longitude, pet_store);
                 Object[] DataTransfer = new Object[2];
                 DataTransfer[0] = mMap;
                 DataTransfer[1] = url;
