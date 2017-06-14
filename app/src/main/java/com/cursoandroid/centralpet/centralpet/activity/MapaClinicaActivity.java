@@ -118,7 +118,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
                 Log.d("onClick", url);
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
-                Toast.makeText(MapaClinicaActivity.this,"Clinica", Toast.LENGTH_LONG).show();
+                Toast.makeText(MapaClinicaActivity.this,"Clinicas Veterinárias", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -136,7 +136,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
                 Log.d("onClick", url);
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
-                Toast.makeText(MapaClinicaActivity.this,"Pet Shop", Toast.LENGTH_LONG).show();
+                Toast.makeText(MapaClinicaActivity.this,"Pet Shops", Toast.LENGTH_LONG).show();
             }
         });
 
