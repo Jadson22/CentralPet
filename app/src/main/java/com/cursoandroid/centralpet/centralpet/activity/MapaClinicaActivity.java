@@ -41,7 +41,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
     private GoogleMap mMap;
     double latitude;
     double longitude;
-    private int PROXIMITY_RADIUS = 10000;
+    private int PROXIMITY_RADIUS = 30000;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
@@ -106,7 +106,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
 
         final Button btnClinica = (Button) findViewById(R.id.Clinica);
         btnClinica.setOnClickListener(new View.OnClickListener() {
-            String veterinary_care  = "Clinica";
+            String veterinary_care  = "veterinary_care";
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
@@ -124,7 +124,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
 
         Button btnPetShop = (Button) findViewById(R.id.PetShop);
         btnPetShop.setOnClickListener(new View.OnClickListener() {
-            String pet_store = "PetShop";
+            String pet_store = "pet_store";
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
@@ -136,7 +136,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
                 Log.d("onClick", url);
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
-                Toast.makeText(MapaClinicaActivity.this,"PetShop", Toast.LENGTH_LONG).show();
+                Toast.makeText(MapaClinicaActivity.this,"Pet Shop", Toast.LENGTH_LONG).show();
             }
         });
 

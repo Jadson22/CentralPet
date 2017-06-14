@@ -16,7 +16,7 @@ public class DownloadUrl {
     public String readUrl(String strUrl) throws IOException {
         String data = "";
         InputStream iStream = null;
-        HttpURLConnection urlConnection = null;
+        HttpURLConnection urlConnection =null;
         try {
             URL url = new URL(strUrl);
 
