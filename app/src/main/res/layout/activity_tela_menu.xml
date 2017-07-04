@@ -28,7 +28,7 @@
             android:layout_height="155dp"
             android:background="@drawable/logocentralpet"
             android:layout_marginTop="55dp"
-            android:id="@+id/imageView2" />
+            android:id="@+id/imageView2"/>
     </RelativeLayout>
 
 
