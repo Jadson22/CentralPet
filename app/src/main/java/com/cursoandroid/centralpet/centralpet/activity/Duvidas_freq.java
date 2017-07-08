@@ -1,9 +1,13 @@
 package com.cursoandroid.centralpet.centralpet.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
 
@@ -26,6 +30,65 @@ public class Duvidas_freq extends AppCompatActivity {
         setSupportActionBar(toolbar_duvidas);
 
         lst_view = (ExpandableListView) findViewById(R.id.lst_view);
+
+        lst_view.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                //Toast.makeText(Duvidas_freq.this, "clic", Toast.LENGTH_SHORT).show();
+                switch (i) {
+                    case 0:
+                    switch (i1){
+                        case 0 : Toast.makeText(Duvidas_freq.this, "vermifugo", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 1 : Toast.makeText(Duvidas_freq.this, "anti", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 2 : Toast.makeText(Duvidas_freq.this, "v8 v10", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 3 : Toast.makeText(Duvidas_freq.this, "tosse", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 4 : Toast.makeText(Duvidas_freq.this, "antirabica", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 5 : Toast.makeText(Duvidas_freq.this, "giardíase", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 6 : Toast.makeText(Duvidas_freq.this, "gripe", Toast.LENGTH_SHORT).show();
+                            break;
+                    }break;
+                    case 1:
+                        switch (i1){
+                            case 0 : Toast.makeText(Duvidas_freq.this, "vermifugo", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 1 : Toast.makeText(Duvidas_freq.this, "antipulgas", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 2 : Toast.makeText(Duvidas_freq.this, "v4", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 3 : Toast.makeText(Duvidas_freq.this, "antirabica", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 4 : Toast.makeText(Duvidas_freq.this, "quadrupla felina", Toast.LENGTH_SHORT).show();
+                                break;
+                        }break;
+                    case 2:
+                        switch (i1){
+                            case 0 : Toast.makeText(Duvidas_freq.this, "pulgas", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 1 : Toast.makeText(Duvidas_freq.this, "ferida", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 2 : Toast.makeText(Duvidas_freq.this, "febre", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 3 : Toast.makeText(Duvidas_freq.this, "conjuntivite", Toast.LENGTH_SHORT).show();
+                                break;
+                        }break;
+                    case 3:
+                        switch (i1){
+                            case 0 : Toast.makeText(Duvidas_freq.this, "pedgree", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 1 : Toast.makeText(Duvidas_freq.this, "vitamax", Toast.LENGTH_SHORT).show();
+                                break;
+                        }break;
+
+                }
+                return true;
+            }
+        });
 
         //cria os grupos
         List<String> lstgrupos = new ArrayList<>();
@@ -75,8 +138,6 @@ public class Duvidas_freq extends AppCompatActivity {
         adaptador_lst adaptador = new adaptador_lst(this, lstgrupos, lstItensGrupo);
         // define o apadtador do ExpandableListView
         lst_view.setAdapter(adaptador);
-
-
 
     }
 }
