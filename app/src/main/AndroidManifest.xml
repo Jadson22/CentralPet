@@ -44,9 +44,6 @@
             android:name=".activity.Suporte"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.Duvidas_freq" />
-        <activity
-            android:name=".activity.Vacinas_Dog"
-            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.MeusPets" />
         <activity android:name=".activity.MeusPetsCad" />
         <activity android:name=".activity.Vermifugo" />
