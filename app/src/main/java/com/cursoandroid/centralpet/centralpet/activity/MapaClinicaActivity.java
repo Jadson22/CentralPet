@@ -37,7 +37,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
     private GoogleMap mMap;
     double latitude;
     double longitude;
-    private int PROXIMITY_RADIUS = 30000;
+    private int PROXIMITY_RADIUS = 10000;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
@@ -200,6 +200,8 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
+        mMap.getUiSettings().setMapToolbarEnabled(true);
+
         Toast.makeText(MapaClinicaActivity.this,"Sua localização", Toast.LENGTH_LONG).show();
 
         Log.d("onLocationChanged", String.format("latitude:%.3f longitude:%.3f",latitude,longitude));
