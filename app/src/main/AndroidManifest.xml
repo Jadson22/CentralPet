@@ -39,7 +39,6 @@
         <activity
             android:name=".activity.SalvosAgenda"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activity.Vacinas" />
         <activity
             android:name=".activity.Suporte"
             android:windowSoftInputMode="stateHidden" />
