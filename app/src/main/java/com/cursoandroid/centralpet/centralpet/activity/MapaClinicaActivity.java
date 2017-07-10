@@ -37,7 +37,7 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
     private GoogleMap mMap;
     double latitude;
     double longitude;
-    private int PROXIMITY_RADIUS = 10000;
+    private int PROXIMITY_RADIUS = 50000;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
