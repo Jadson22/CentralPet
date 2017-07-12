@@ -29,6 +29,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
+
 public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
@@ -199,8 +201,11 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(17));
         mMap.getUiSettings().setMapToolbarEnabled(true);
+        habilitarControlosDeZoom();
+        habilitarBussola();
+
 
         Toast.makeText(MapaClinicaActivity.this,"Sua localização", Toast.LENGTH_LONG).show();
 
@@ -284,6 +289,20 @@ public class MapaClinicaActivity extends FragmentActivity implements OnMapReadyC
             // other 'case' lines to check for other permissions this app might request.
             // You can add here other case statements according to your requirement.
         }
+    }
+
+    public void habilitarControlosDeZoom() {
+
+        //Habilitando o controlo de zoom
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+    }
+
+    public void habilitarBussola() {
+
+        //Habilitando a aparência da bússola
+        mMap.getUiSettings().setCompassEnabled(true);
+
     }
 }
 
