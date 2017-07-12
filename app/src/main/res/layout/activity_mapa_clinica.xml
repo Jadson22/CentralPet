@@ -23,8 +23,8 @@
                 android:text="Clínicas"
                 android:id="@+id/Clinica"
                 android:layout_gravity="right|bottom"
-                android:background="@drawable/fundo_secundario"
-            android:layout_marginBottom="159dp"
+                android:background="@drawable/fundo_principal"
+            android:layout_marginBottom="151dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -34,13 +34,11 @@
             android:layout_height="wrap_content"
             android:text="Pet Shops"
             android:id="@+id/PetShop"
-            android:background="@drawable/fundo_secundario"
+            android:background="@drawable/fundo_principal"
             android:allowUndo="false"
             android:layout_gravity="right|center_vertical"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="58dp"
             android:layout_alignTop="@+id/Clinica"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignLeft="@+id/Clinica"
             android:layout_alignStart="@+id/Clinica" />
     </RelativeLayout>
