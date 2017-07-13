@@ -54,16 +54,10 @@ public class tela_menu extends AppCompatActivity{
 
 
 
-        if(AccessToken.getCurrentAccessToken() == null){
-            goLoginScreen();
-        }
-       // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-       // if(user != null){
-        //    String nome = user.getDisplayName();
-        //    String email = user.getEmail();
-       // } else {
+        //if(AccessToken.getCurrentAccessToken() == null){
         //    goLoginScreen();
         //}
+
 
 
         //chamar a agenda
@@ -137,11 +131,11 @@ public class tela_menu extends AppCompatActivity{
     }
 
 
-    private void goLoginScreen(){
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
+    //private void goLoginScreen(){
+    //    Intent intent = new Intent(this, MainActivity.class);
+    //   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    //   startActivity(intent);
+    //}
 
 
     //toolbar
@@ -163,8 +157,8 @@ public class tela_menu extends AppCompatActivity{
 
     }
         public void deslogar_usuario(){
-        LoginManager.getInstance().logOut();
-        goLoginScreen();
+        //LoginManager.getInstance().logOut();
+        //goLoginScreen();
         }
 
 }
