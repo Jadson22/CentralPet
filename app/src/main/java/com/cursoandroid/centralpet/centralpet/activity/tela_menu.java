@@ -54,7 +54,9 @@ public class tela_menu extends AppCompatActivity{
 
 
 
-
+        if(AccessToken.getCurrentAccessToken() == null){
+            goLoginScreen();
+        }
        // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
        // if(user != null){
         //    String nome = user.getDisplayName();
@@ -127,24 +129,20 @@ public class tela_menu extends AppCompatActivity{
 
 
 
-
         //Anúncios
         adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
     }
-    //private void goLoginScreen(){
-     //   Intent intent = new Intent(this, MainActivity.class);
-     //   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-     //   startActivity(intent);
-    //}
 
-   // public void logout(View view){
-     //   FirebaseAuth.getInstance().signOut();
-     //   LoginManager.getInstance().logOut();
-     //   goLoginScreen();
-    //}
+
+    private void goLoginScreen(){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
 
     //toolbar
     @Override
@@ -155,20 +153,19 @@ public class tela_menu extends AppCompatActivity{
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //switch (item.getItemId()) {
-        //case R.id.action_deslogar:
-        // deslogar_usuario();
+        switch (item.getItemId()) {
+        case R.id.action_deslogar:
+        deslogar_usuario();
         return true;
-        // default:
-        //  return super.onOptionsItemSelected(item);
-        //}
+        default:
+        return super.onOptionsItemSelected(item);
+        }
 
     }
-        //private void deslogar_usuario(){
-        //FirebaseAuth.getInstance().signOut();
-        // LoginManager.getInstance().logOut();
-        // goLoginScreen();
-        //}
+        public void deslogar_usuario(){
+        LoginManager.getInstance().logOut();
+        goLoginScreen();
+        }
 
 }
 
