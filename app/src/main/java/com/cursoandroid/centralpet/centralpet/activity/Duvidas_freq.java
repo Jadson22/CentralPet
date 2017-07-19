@@ -19,6 +19,7 @@ public class Duvidas_freq extends AppCompatActivity {
 
     private Toolbar toolbar_duvidas;
     private ExpandableListView lst_view;
+    private String [] opcao = {"op0", "op1", "op2", "op3"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +36,31 @@ public class Duvidas_freq extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
                 //Toast.makeText(Duvidas_freq.this, "clic", Toast.LENGTH_SHORT).show();
+
+                TextosDuvidas td = new TextosDuvidas();
+
                 switch (i) {
                     case 0:
                     switch (i1){
-                        case 0 : Toast.makeText(Duvidas_freq.this, "vermifugo", Toast.LENGTH_SHORT).show();
+                        case 0 : int numero0 = 0;
+                            Intent intent = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent.putExtra("opcao", opcao[numero0]);
+                            startActivity(intent);
                             break;
-                        case 1 : Toast.makeText(Duvidas_freq.this, "anti", Toast.LENGTH_SHORT).show();
+                        case 1 : int numero1 = 1;
+                            Intent intent1 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent1.putExtra("opcao", opcao[numero1]);
+                            startActivity(intent1);
                             break;
-                        case 2 : Toast.makeText(Duvidas_freq.this, "v8 v10", Toast.LENGTH_SHORT).show();
+                        case 2 : int numero2 = 2;
+                            Intent intent2 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent2.putExtra("opcao", opcao[numero2]);
+                            startActivity(intent2);
                             break;
-                        case 3 : Toast.makeText(Duvidas_freq.this, "tosse", Toast.LENGTH_SHORT).show();
+                        case 3 : int numero3 = 3;
+                            Intent intent3 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent3.putExtra("opcao", opcao[numero3]);
+                            startActivity(intent3);
                             break;
                         case 4 : Toast.makeText(Duvidas_freq.this, "antirabica", Toast.LENGTH_SHORT).show();
                             break;
