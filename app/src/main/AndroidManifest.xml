@@ -26,8 +26,7 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".activity.MainActivity"> </activity>
-
+        <activity android:name=".activity.MainActivity"></activity>
         <activity android:name=".activity.tela_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,15 +34,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activity.CadastroAgenda" android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activity.SalvosAgenda" android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activity.Suporte" android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.CadastroAgenda"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.SalvosAgenda"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.Suporte"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.Duvidas_freq" />
         <activity android:name=".activity.MeusPets" />
         <activity android:name=".activity.MeusPetsCad" />
-        <activity android:name=".activity.Vermifugo" />
-        <activity android:name=".activity.Anti_Pulgas" />
         <activity android:name=".activity.Modelo" />
         <activity android:name=".activity.ModeloAgenda" />
         <activity android:name=".activity.ListVacinas" />
@@ -71,7 +73,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
 
     </application>
 
