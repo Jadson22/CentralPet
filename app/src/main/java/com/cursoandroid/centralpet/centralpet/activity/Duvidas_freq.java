@@ -19,7 +19,7 @@ public class Duvidas_freq extends AppCompatActivity {
 
     private Toolbar toolbar_duvidas;
     private ExpandableListView lst_view;
-    private String [] opcao = {"op0", "op1", "op2", "op3"};
+    private String [] opcao = {"op0", "op1", "op2", "op3", "op4", "op5", "op6", "op7", "op8", "op9", "op10", "op11"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,50 +36,59 @@ public class Duvidas_freq extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
                 //Toast.makeText(Duvidas_freq.this, "clic", Toast.LENGTH_SHORT).show();
-
-                TextosDuvidas td = new TextosDuvidas();
-
                 switch (i) {
                     case 0:
                     switch (i1){
-                        case 0 : int numero0 = 0;
-                            Intent intent = new Intent(Duvidas_freq.this, TextosDuvidas.class);
-                            intent.putExtra("opcao", opcao[numero0]);
+                        case 0 : Intent intent = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent.putExtra("opcao", opcao[0]);
                             startActivity(intent);
                             break;
-                        case 1 : int numero1 = 1;
-                            Intent intent1 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
-                            intent1.putExtra("opcao", opcao[numero1]);
+                        case 1 : Intent intent1 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent1.putExtra("opcao", opcao[1]);
                             startActivity(intent1);
                             break;
-                        case 2 : int numero2 = 2;
-                            Intent intent2 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
-                            intent2.putExtra("opcao", opcao[numero2]);
+                        case 2 : Intent intent2 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent2.putExtra("opcao", opcao[2]);
                             startActivity(intent2);
                             break;
-                        case 3 : int numero3 = 3;
-                            Intent intent3 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
-                            intent3.putExtra("opcao", opcao[numero3]);
+                        case 3 : Intent intent3 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent3.putExtra("opcao", opcao[3]);
                             startActivity(intent3);
                             break;
-                        case 4 : Toast.makeText(Duvidas_freq.this, "antirabica", Toast.LENGTH_SHORT).show();
+                        case 4 : Intent intent4 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent4.putExtra("opcao", opcao[4]);
+                            startActivity(intent4);
                             break;
-                        case 5 : Toast.makeText(Duvidas_freq.this, "giardíase", Toast.LENGTH_SHORT).show();
+                        case 5 : Intent intent5 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent5.putExtra("opcao", opcao[5]);
+                            startActivity(intent5);
                             break;
-                        case 6 : Toast.makeText(Duvidas_freq.this, "gripe", Toast.LENGTH_SHORT).show();
+                        case 6 : Intent intent6 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                            intent6.putExtra("opcao", opcao[6]);
+                            startActivity(intent6);
                             break;
                     }break;
                     case 1:
                         switch (i1){
-                            case 0 : Toast.makeText(Duvidas_freq.this, "vermifugo", Toast.LENGTH_SHORT).show();
+                            case 0 : Intent intent7 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                                intent7.putExtra("opcao", opcao[7]);
+                                startActivity(intent7);
                                 break;
-                            case 1 : Toast.makeText(Duvidas_freq.this, "antipulgas", Toast.LENGTH_SHORT).show();
+                            case 1 : Intent intent8 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                                intent8.putExtra("opcao", opcao[8]);
+                                startActivity(intent8);
                                 break;
-                            case 2 : Toast.makeText(Duvidas_freq.this, "v4", Toast.LENGTH_SHORT).show();
+                            case 2 : Intent intent9 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                                intent9.putExtra("opcao", opcao[9]);
+                                startActivity(intent9);
                                 break;
-                            case 3 : Toast.makeText(Duvidas_freq.this, "antirabica", Toast.LENGTH_SHORT).show();
+                            case 3 : Intent intent10 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                                intent10.putExtra("opcao", opcao[10]);
+                                startActivity(intent10);
                                 break;
-                            case 4 : Toast.makeText(Duvidas_freq.this, "quadrupla felina", Toast.LENGTH_SHORT).show();
+                            case 4 : Intent intent11 = new Intent(Duvidas_freq.this, TextosDuvidas.class);
+                                intent11.putExtra("opcao", opcao[11]);
+                                startActivity(intent11);
                                 break;
                         }break;
                     case 2:

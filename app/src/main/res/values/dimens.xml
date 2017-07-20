@@ -8,4 +8,6 @@
     <dimen name="txt_cad">16dp</dimen>
     <dimen name="espc_telas">5dp</dimen>
     <dimen name="txtexib">18dp</dimen>
+    <dimen name="titulo">19dp</dimen>
+    <dimen name="marginTopTextos">12dp</dimen>
 </resources>
