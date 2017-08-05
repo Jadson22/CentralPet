@@ -37,10 +37,10 @@ public class TextosDuvidas extends AppCompatActivity {
                 texto.setText("antipulgas é aquilo");
             }else if(opcaoescolhida.equals("op2")){
                 titulo.setText("V8 ou V10");
-                texto.setText("v8 é o caralho");
+                texto.setText("");
             }else if(opcaoescolhida.equals("op3")){
                 titulo.setText("");
-                texto.setText("tosse pq deu certo");
+                texto.setText("");
             }else if(opcaoescolhida.equals("op4")){
                 titulo.setText("");
                 texto.setText("rabica");
