@@ -5,7 +5,7 @@
     <dimen name="tela_inicial">1dp</dimen>
     <dimen name="tam_icon">50dp</dimen>
     <dimen name="espCad">7dp</dimen>
-    <dimen name="txt_cad">16dp</dimen>
+    <dimen name="txt_cad">16sp</dimen>
     <dimen name="espc_telas">5dp</dimen>
     <dimen name="txtexib">18dp</dimen>
     <dimen name="titulo">19dp</dimen>

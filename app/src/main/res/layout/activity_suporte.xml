@@ -38,9 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/avalieid"
-                android:padding="@dimen/espc_telas"
                 android:layout_below="@id/rl1"
-                android:elevation="2dp"
                 android:layout_margin="7dp">
 
                 <TextView
@@ -61,14 +59,23 @@
                     android:textSize="@dimen/txt_cad"
                     android:layout_marginLeft="15dp" />
             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linha1"
+                android:layout_below="@id/avalieid"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/linha_info"/>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/espc_telas"
                 android:id="@+id/compartilheid"
-                android:layout_below="@+id/avalieid"
-                android:elevation="2dp"
+                android:layout_below="@+id/linha1"
                 android:layout_margin="7dp">
 
                 <TextView
@@ -89,14 +96,24 @@
                     android:layout_marginLeft="15dp" />
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linha2"
+                android:layout_below="@id/compartilheid"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/linha_info"/>
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/espc_telas"
-                android:layout_below="@+id/compartilheid"
+                android:layout_below="@+id/linha2"
                 android:id="@+id/versaoid"
-                android:elevation="2dp"
                 android:layout_margin="7dp">
 
                 <TextView
@@ -118,11 +135,24 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linhaa4"
+                android:layout_below="@id/versaoid"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/linha_info"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/rl2"
                 android:padding="@dimen/espc_telas"
-                android:layout_below="@id/versaoid">
+                android:layout_below="@id/linhaa4">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -136,10 +166,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="@dimen/espc_telas"
                     android:layout_below="@+id/rl2"
                     android:id="@+id/contatoid"
-                    android:elevation="2dp"
                     android:layout_margin="7dp">
 
                     <TextView
@@ -161,10 +189,22 @@
                 </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linha3"
+                android:layout_below="@id/contatoid"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/linha_info"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/espc_telas"
-                android:layout_below="@+id/contatoid"
+                android:layout_below="@+id/linha3"
                 android:id="@+id/twitterid"
                 android:layout_margin="7dp">
 
@@ -183,8 +223,18 @@
                     android:textColor="@color/txtgeral"
                     android:layout_below="@+id/tt"
                     android:textSize="@dimen/txt_cad"
-                    android:layout_marginLeft="15dp"
-                    android:elevation="3dp"/>
+                    android:layout_marginLeft="15dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linha5"
+                android:layout_below="@id/twitterid"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/linha_info"/>
             </RelativeLayout>
 
 
