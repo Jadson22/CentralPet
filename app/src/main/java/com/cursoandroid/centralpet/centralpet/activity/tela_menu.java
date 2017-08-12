@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
+import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.FoodList;
+import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.MainActivityy;
 import com.facebook.AccessToken;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.ads.AdRequest;
@@ -142,7 +144,7 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
         meusPets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tela_menu.this, MeusPets.class);
+                Intent intent = new Intent(tela_menu.this, MainActivityy.class);
                 startActivity(intent);
             }
         });

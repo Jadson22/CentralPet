@@ -12,21 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.cursoandroid.centralpet.centralpet.R;
-import com.cursoandroid.centralpet.centralpet.activity.bancodados.DataBase2;
-import com.cursoandroid.centralpet.centralpet.activity.dominio.RepositorioPerfil;
-import com.cursoandroid.centralpet.centralpet.activity.dominio.entidades.Perfil;
 
 public class Modelo extends AppCompatActivity {
 
     private Toolbar toolbarmodelo;
-    private TextView nome, raca, dtnasc;
-
-    private DataBase2 dataBase2;
-    private SQLiteDatabase con;
-    private RepositorioPerfil repositorioPerfil;
-    private Perfil perfil;
-
-    private ArrayAdapter<Perfil> adpPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +26,10 @@ public class Modelo extends AppCompatActivity {
         toolbarmodelo.setTitle("Meus Pets");
         setSupportActionBar(toolbarmodelo);
 
-        nome = (TextView) findViewById(R.id.edtnome);
-        raca = (TextView) findViewById(R.id.edtraca);
-        dtnasc = (TextView) findViewById(R.id.edtnasc);
 
-        Bundle bundle =  getIntent().getExtras();
-        if((bundle != null) && (bundle.containsKey("PERFIL"))){
-            perfil = (Perfil)bundle.getSerializable("PERFIL");
-            preencheDados2();
-        }else{
-            perfil = new Perfil();
-        }
     }
 
-    private void preencheDados2(){
-
-        nome.setText(perfil.getNome());
-        raca.setText(perfil.getRaca());
-        dtnasc.setText(null);
-    }
-
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -78,4 +50,6 @@ public class Modelo extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    */
 }
