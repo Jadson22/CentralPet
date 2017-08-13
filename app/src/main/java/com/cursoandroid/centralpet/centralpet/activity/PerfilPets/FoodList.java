@@ -30,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
-import com.cursoandroid.centralpet.centralpet.activity.CadastroAgenda;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -63,7 +62,7 @@ public class FoodList extends AppCompatActivity {
         gridView.setAdapter(adapter);
 
         // get all data from sqlite
-        Cursor cursor = MainActivityy.sqLiteHelper.getData("SELECT * FROM FOOD");
+        Cursor cursor = CadastroMeusPets.sqLiteHelper.getData("SELECT * FROM FOOD");
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
@@ -88,7 +87,7 @@ public class FoodList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         if (item == 0) {
                             // update
-                            Cursor c = MainActivityy.sqLiteHelper.getData("SELECT id FROM FOOD");
+                            Cursor c = CadastroMeusPets.sqLiteHelper.getData("SELECT id FROM FOOD");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while (c.moveToNext()){
                                 arrID.add(c.getInt(0));
@@ -98,7 +97,7 @@ public class FoodList extends AppCompatActivity {
 
                         } else {
                             // delete
-                            Cursor c = MainActivityy.sqLiteHelper.getData("SELECT id FROM FOOD");
+                            Cursor c = CadastroMeusPets.sqLiteHelper.getData("SELECT id FROM FOOD");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while (c.moveToNext()){
                                 arrID.add(c.getInt(0));
@@ -148,10 +147,10 @@ public class FoodList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    MainActivityy.sqLiteHelper.updateData(
+                    CadastroMeusPets.sqLiteHelper.updateData(
                             edtName.getText().toString().trim(),
                             edtPrice.getText().toString().trim(),
-                            MainActivityy.imageViewToByte(imageViewFood),
+                            CadastroMeusPets.imageViewToByte(imageViewFood),
                             position
                     );
                     dialog.dismiss();
@@ -174,7 +173,7 @@ public class FoodList extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    MainActivityy.sqLiteHelper.deleteData(idFood);
+                    CadastroMeusPets.sqLiteHelper.deleteData(idFood);
                     Toast.makeText(getApplicationContext(), "Delete successfully!!!", Toast.LENGTH_SHORT).show();
                 } catch (Exception e){
                     Log.e("error", e.getMessage());
@@ -194,7 +193,7 @@ public class FoodList extends AppCompatActivity {
 
     private void updateFoodList(){
         // get all data from sqlite
-        Cursor cursor = MainActivityy.sqLiteHelper.getData("SELECT * FROM FOOD");
+        Cursor cursor = CadastroMeusPets.sqLiteHelper.getData("SELECT * FROM FOOD");
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
@@ -254,7 +253,7 @@ public class FoodList extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.add:
-                Intent intent = new Intent(FoodList.this, MainActivityy.class);
+                Intent intent = new Intent(FoodList.this, CadastroMeusPets.class);
                 startActivity(intent);
                 finish();
                 break;

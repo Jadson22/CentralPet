@@ -11,6 +11,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,10 +27,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class MainActivityy extends AppCompatActivity {
+public class CadastroMeusPets extends AppCompatActivity {
+
+    private Toolbar tb;
 
     EditText edtName, edtPrice;
-    Button btnChoose, btnAdd, btnList;
+    Button btnChoose, btnList;
     ImageView imageView;
 
     final int REQUEST_CODE_GALLERY = 999;
@@ -36,7 +42,11 @@ public class MainActivityy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityy_main);
+        setContentView(R.layout.cadastro_meus_pets);
+
+        tb = (Toolbar) findViewById(R.id.toolbar_cadastroMeusPets) ;
+        tb.setTitle("Novo Pet");
+        setSupportActionBar(tb);
 
         init();
 
@@ -48,14 +58,15 @@ public class MainActivityy extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ActivityCompat.requestPermissions(
-                        MainActivityy.this,
+                        CadastroMeusPets.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         REQUEST_CODE_GALLERY
                 );
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+
+       /*  btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
@@ -73,15 +84,32 @@ public class MainActivityy extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });
+        }); */
 
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityy.this, FoodList.class);
+                Intent intent = new Intent(CadastroMeusPets.this, FoodList.class);
                 startActivity(intent);
             }
         });
+    }
+
+    private void adicionar() {
+        try{
+            sqLiteHelper.insertData(
+                    edtName.getText().toString().trim(),
+                    edtPrice.getText().toString().trim(),
+                    imageViewToByte(imageView)
+            );
+            Toast.makeText(getApplicationContext(), "Added successfully!", Toast.LENGTH_SHORT).show();
+            edtName.setText("");
+            edtPrice.setText("");
+            imageView.setImageResource(R.mipmap.ic_launcher);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public static byte[] imageViewToByte(ImageView image) {
@@ -134,9 +162,29 @@ public class MainActivityy extends AppCompatActivity {
         edtName = (EditText) findViewById(R.id.edtName);
         edtPrice = (EditText) findViewById(R.id.edtPrice);
         btnChoose = (Button) findViewById(R.id.btnChoose);
-        btnAdd = (Button) findViewById(R.id.btnAdd);
+       // btnAdd = (Button) findViewById(R.id.btnAdd);
         btnList = (Button) findViewById(R.id.btnList);
         imageView = (ImageView) findViewById(R.id.imageView);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_cadstromeuspets, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.adicionar:
+                adicionar();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

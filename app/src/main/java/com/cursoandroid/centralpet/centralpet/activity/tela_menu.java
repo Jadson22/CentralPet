@@ -1,7 +1,6 @@
 package com.cursoandroid.centralpet.centralpet.activity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,23 +10,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
-import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.FoodList;
-import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.MainActivityy;
-import com.facebook.AccessToken;
-import com.facebook.login.LoginManager;
+import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.CadastroMeusPets;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
@@ -144,7 +136,7 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
         meusPets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tela_menu.this, MainActivityy.class);
+                Intent intent = new Intent(tela_menu.this, CadastroMeusPets.class);
                 startActivity(intent);
             }
         });

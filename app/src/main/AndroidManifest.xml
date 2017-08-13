@@ -49,10 +49,10 @@
         <activity android:name=".activity.ModeloAgenda" />
         <activity android:name=".activity.ListVacinas" />
         <activity android:name=".activity.TextosDuvidas"/>
-        <activity android:name=".activity.PerfilPets.MainActivityy"/>
+        <activity android:name=".activity.PerfilPets.CadastroMeusPets"/>
         <activity android:name=".activity.PerfilPets.FoodList"
             android:label="Food List"
-            android:parentActivityName=".activity.PerfilPets.MainActivityy" />
+            android:parentActivityName=".activity.PerfilPets.CadastroMeusPets" />
 
 
         <!--
