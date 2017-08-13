@@ -27,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
@@ -43,10 +44,9 @@ public class FoodList extends AppCompatActivity {
 
     private Toolbar toolbar_meusPets;
 
-    GridView gridView;
+    ListView listView;
     ArrayList<Food> list;
     FoodListAdapter adapter = null;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,25 +56,30 @@ public class FoodList extends AppCompatActivity {
         toolbar_meusPets = (Toolbar) findViewById(R.id.toolbar_MeusPets);
         setSupportActionBar(toolbar_meusPets);
 
-        gridView = (GridView) findViewById(R.id.gridView);
+        listView = (ListView) findViewById(R.id.listView11);
         list = new ArrayList<>();
         adapter = new FoodListAdapter(this, R.layout.food_items, list);
-        gridView.setAdapter(adapter);
+        listView.setAdapter(adapter);
 
         // get all data from sqlite
-        Cursor cursor = CadastroMeusPets.sqLiteHelper.getData("SELECT * FROM FOOD");
+        Cursor cursor = CadastroMeusPets.sqLiteHelper.getData("SELECT * FROM PET");
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String name = cursor.getString(1);
-            String price = cursor.getString(2);
-            byte[] image = cursor.getBlob(3);
+            String raca = cursor.getString(2);
+            String idade = cursor.getString(3);
 
-            list.add(new Food(name, price, image, id));
+            String sexo = cursor.getString(4);
+            String tipo = cursor.getString(5);
+
+            byte[] image = cursor.getBlob(6);
+
+            list.add(new Food(id, name, sexo, raca, tipo, idade, image));
         }
         adapter.notifyDataSetChanged();
 
-        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
@@ -87,7 +92,7 @@ public class FoodList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         if (item == 0) {
                             // update
-                            Cursor c = CadastroMeusPets.sqLiteHelper.getData("SELECT id FROM FOOD");
+                            Cursor c = CadastroMeusPets.sqLiteHelper.getData("SELECT id FROM PET");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while (c.moveToNext()){
                                 arrID.add(c.getInt(0));
@@ -97,7 +102,7 @@ public class FoodList extends AppCompatActivity {
 
                         } else {
                             // delete
-                            Cursor c = CadastroMeusPets.sqLiteHelper.getData("SELECT id FROM FOOD");
+                            Cursor c = CadastroMeusPets.sqLiteHelper.getData("SELECT id FROM PET");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while (c.moveToNext()){
                                 arrID.add(c.getInt(0));
@@ -193,15 +198,20 @@ public class FoodList extends AppCompatActivity {
 
     private void updateFoodList(){
         // get all data from sqlite
-        Cursor cursor = CadastroMeusPets.sqLiteHelper.getData("SELECT * FROM FOOD");
+        Cursor cursor = CadastroMeusPets.sqLiteHelper.getData("SELECT * FROM PET");
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String name = cursor.getString(1);
-            String price = cursor.getString(2);
-            byte[] image = cursor.getBlob(3);
+            String raca = cursor.getString(2);
+            String idade = cursor.getString(3);
 
-            list.add(new Food(name, price, image, id));
+            String sexo = cursor.getString(4);
+            String tipo = cursor.getString(5);
+
+            byte[] image = cursor.getBlob(6);
+
+            list.add(new Food(id, name, sexo, raca, tipo, idade, image));
         }
         adapter.notifyDataSetChanged();
     }

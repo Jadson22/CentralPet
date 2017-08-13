@@ -7,14 +7,20 @@ package com.cursoandroid.centralpet.centralpet.activity.PerfilPets;
 public class Food {
     private int id;
     private String name;
-    private String price;
+    private String sexo;
+    private String raca;
+    private String tipo;
+    private String idade;
     private byte[] image;
 
-    public Food(String name, String price, byte[] image, int id) {
-        this.name = name;
-        this.price = price;
-        this.image = image;
+    public Food(int id, String name, String sexo, String raca, String tipo, String idade, byte[] image) {
         this.id = id;
+        this.name = name;
+        this.sexo = sexo;
+        this.raca = raca;
+        this.tipo = tipo;
+        this.idade = idade;
+        this.image = image;
     }
 
     public int getId() {
@@ -33,12 +39,36 @@ public class Food {
         this.name = name;
     }
 
-    public String getPrice() {
-        return price;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
 
     public byte[] getImage() {

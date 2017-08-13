@@ -13,7 +13,7 @@
     <LinearLayout
         android:id="@+id/relative66"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
     <include layout="@layout/toolbar"
@@ -29,9 +29,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/fotoperfil"
         android:layout_alignParentLeft="true"/>
 
         <Button
@@ -40,9 +40,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_margin="5dp"
-            android:textColor="@color/black"
-            android:padding="3dp"/>
+            android:layout_marginLeft="6dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:textColor="#ffffff"
+            android:background="#919191"/>
         </LinearLayout>
 
 <LinearLayout
@@ -63,7 +65,7 @@
         android:layout_gravity="bottom"
         android:padding="8dp"/>
         <EditText
-            android:id="@+id/edtName"
+            android:id="@+id/editartName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -75,21 +77,22 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="wrap_content">
 
             <RadioGroup
                 android:id="@+id/radioSexo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Macho"
                     android:id="@+id/rbMacho"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:checked="true" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -121,7 +124,7 @@
                 android:layout_gravity="bottom"
                 android:padding="8dp"/>
         <EditText
-            android:id="@+id/edtRaca"
+            android:id="@+id/editarRaca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -133,21 +136,22 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="wrap_content">
 
             <RadioGroup
                 android:id="@+id/radioTipo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cão"
                     android:id="@+id/rbCao"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:checked="true" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -182,7 +186,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/edtIdade"
+            android:id="@+id/editarIdade"
             android:layout_below="@+id/edtPrice"
             android:layout_alignParentRight="true" />
             </LinearLayout>
@@ -195,7 +199,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="233dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="#919191"/>
+
+
 
     </LinearLayout>
     </ScrollView>

@@ -3,6 +3,8 @@ package com.cursoandroid.centralpet.centralpet.activity.PerfilPets;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -19,6 +21,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
@@ -31,7 +35,9 @@ public class CadastroMeusPets extends AppCompatActivity {
 
     private Toolbar tb;
 
-    EditText edtName, edtPrice;
+    EditText edtName, edtRaca, edtIdade;
+    RadioGroup radioSexo, radioTipo;
+    RadioButton rbSexoEscolhido, rbTipoEscolhido;
     Button btnChoose, btnList;
     ImageView imageView;
 
@@ -44,15 +50,15 @@ public class CadastroMeusPets extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_meus_pets);
 
-        tb = (Toolbar) findViewById(R.id.toolbar_cadastroMeusPets) ;
+        tb = (Toolbar) findViewById(R.id.toolbar_cadastroMeusPets);
         tb.setTitle("Novo Pet");
         setSupportActionBar(tb);
 
         init();
 
-        sqLiteHelper = new SQLiteHelper(this, "FoodDB.sqlite", null, 2);
+        sqLiteHelper = new SQLiteHelper(this, "PetDB.sqlite", null, 4);
 
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS FOOD(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, price VARCHAR, image BLOB)");
+        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS PET (Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, sexo VARCHAR, raca VARCHAR, tipo VARCHAR, idade VARCHAR, image BLOB)");
 
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,27 +71,6 @@ public class CadastroMeusPets extends AppCompatActivity {
             }
         });
 
-
-       /*  btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try{
-                    sqLiteHelper.insertData(
-                            edtName.getText().toString().trim(),
-                            edtPrice.getText().toString().trim(),
-                            imageViewToByte(imageView)
-                    );
-                    Toast.makeText(getApplicationContext(), "Added successfully!", Toast.LENGTH_SHORT).show();
-                    edtName.setText("");
-                    edtPrice.setText("");
-                    imageView.setImageResource(R.mipmap.ic_launcher);
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        }); */
-
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,24 +78,40 @@ public class CadastroMeusPets extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void adicionar() {
-        try{
+
+        int idRbSexoEscolhido = radioSexo.getCheckedRadioButtonId();
+        if(idRbSexoEscolhido > 0 ){
+            rbSexoEscolhido = (RadioButton) findViewById(idRbSexoEscolhido);
+        }
+
+        int idRbTipoEscolhido = radioTipo.getCheckedRadioButtonId();
+        if(idRbTipoEscolhido > 0 ){
+            rbTipoEscolhido = (RadioButton) findViewById(idRbTipoEscolhido);
+        }
+
+        try {
             sqLiteHelper.insertData(
                     edtName.getText().toString().trim(),
-                    edtPrice.getText().toString().trim(),
+                    rbSexoEscolhido.getText().toString().trim(),
+                    edtRaca.getText().toString().trim(),
+                    rbTipoEscolhido.getText().toString().trim(),
+                    edtIdade.getText().toString().trim(),
                     imageViewToByte(imageView)
             );
-            Toast.makeText(getApplicationContext(), "Added successfully!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Adicionado com sucesso!", Toast.LENGTH_SHORT).show();
             edtName.setText("");
-            edtPrice.setText("");
-            imageView.setImageResource(R.mipmap.ic_launcher);
-        }
-        catch (Exception e){
+            edtRaca.setText("");
+            edtIdade.setText("");
+            imageView.setImageResource(R.drawable.fotoperfil);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public static byte[] imageViewToByte(ImageView image) {
         Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
@@ -130,7 +131,7 @@ public class CadastroMeusPets extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE_GALLERY);
             }
             else {
-                Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Você não tem permissão para acessar os arquivos!", Toast.LENGTH_SHORT).show();
             }
             return;
         }
@@ -159,12 +160,27 @@ public class CadastroMeusPets extends AppCompatActivity {
     }
 
     private void init(){
-        edtName = (EditText) findViewById(R.id.edtName);
-        edtPrice = (EditText) findViewById(R.id.edtPrice);
+        edtName = (EditText) findViewById(R.id.editartName);
+        edtRaca = (EditText) findViewById(R.id.editarRaca);
+        edtIdade = (EditText) findViewById(R.id.editarIdade);
+
+        radioSexo = (RadioGroup) findViewById(R.id.radioSexo);
+        radioTipo = (RadioGroup) findViewById(R.id.radioTipo);
+
+        int idRbSexoEscolhido = radioSexo.getCheckedRadioButtonId();
+        if(idRbSexoEscolhido > 0 ){
+            rbSexoEscolhido = (RadioButton) findViewById(idRbSexoEscolhido);
+        }
+
+        int idRbTipoEscolhido = radioTipo.getCheckedRadioButtonId();
+        if(idRbTipoEscolhido > 0 ){
+            rbTipoEscolhido = (RadioButton) findViewById(idRbTipoEscolhido);
+        }
+
         btnChoose = (Button) findViewById(R.id.btnChoose);
-       // btnAdd = (Button) findViewById(R.id.btnAdd);
         btnList = (Button) findViewById(R.id.btnList);
         imageView = (ImageView) findViewById(R.id.imageView);
+
     }
 
 
@@ -186,6 +202,5 @@ public class CadastroMeusPets extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 }

@@ -9,13 +9,10 @@
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar_MeusPets"/>
 
-    <GridView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gridView"
+        android:id="@+id/listView11"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:columnWidth="120dp"
-        android:gravity="center"
-        android:numColumns="auto_fit"/>
+        android:layout_centerHorizontal="true" />
 </LinearLayout>

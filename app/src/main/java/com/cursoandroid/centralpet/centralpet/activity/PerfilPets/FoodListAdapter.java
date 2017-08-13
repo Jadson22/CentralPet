@@ -46,8 +46,8 @@ public class FoodListAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
-        ImageView imageView;
-        TextView txtName, txtPrice;
+        ImageView imageView, iconesexo, iconetipo;
+        TextView txtName, txtRaca, txtIdade;
     }
 
     @Override
@@ -60,23 +60,41 @@ public class FoodListAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout, null);
 
-            holder.txtName = (TextView) row.findViewById(R.id.txtName);
-            holder.txtPrice = (TextView) row.findViewById(R.id.txtPrice);
-            holder.imageView = (ImageView) row.findViewById(R.id.imgFood);
+            holder.txtName = (TextView) row.findViewById(R.id.textoName);
+            holder.txtRaca = (TextView) row.findViewById(R.id.textoRaca);
+            holder.txtIdade = (TextView) row.findViewById(R.id.textoIdade);
+            holder.imageView = (ImageView) row.findViewById(R.id.imgPerfil);
+
+            holder.iconesexo = (ImageView) row.findViewById(R.id.iconeSexo);
+            holder.iconetipo = (ImageView) row.findViewById(R.id.iconeTipo);
+
             row.setTag(holder);
         }
-        else {
+        else{
             holder = (ViewHolder) row.getTag();
         }
 
         Food food = foodsList.get(position);
 
         holder.txtName.setText(food.getName());
-        holder.txtPrice.setText(food.getPrice());
+        holder.txtRaca.setText(food.getRaca());
+        holder.txtIdade.setText(food.getIdade());
 
         byte[] foodImage = food.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(foodImage, 0, foodImage.length);
         holder.imageView.setImageBitmap(bitmap);
+
+        if(food.getSexo().toString() == "Macho"){
+            holder.iconesexo.setImageResource(R.drawable.iconemasc);
+        }else{
+            holder.iconesexo.setImageResource(R.drawable.iconefem);
+        }
+
+        if(food.getTipo().toString() == "Cão"){
+            holder.iconetipo.setImageResource(R.drawable.iconecao);
+        }else{
+            holder.iconetipo.setImageResource(R.drawable.iconegato);
+        }
 
         return row;
     }
