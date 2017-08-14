@@ -45,7 +45,6 @@
             android:name=".activity.Suporte"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.Duvidas_freq" />
-        <activity android:name=".activity.Modelo" />
         <activity android:name=".activity.ModeloAgenda" />
         <activity android:name=".activity.ListVacinas" />
         <activity android:name=".activity.TextosDuvidas"/>
