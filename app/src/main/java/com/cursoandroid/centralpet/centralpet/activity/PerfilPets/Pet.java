@@ -4,7 +4,7 @@ package com.cursoandroid.centralpet.centralpet.activity.PerfilPets;
  * Created by Quoc Nguyen on 13-Dec-16.
  */
 
-public class Food {
+public class Pet {
     private int id;
     private String name;
     private String sexo;
@@ -13,7 +13,7 @@ public class Food {
     private String idade;
     private byte[] image;
 
-    public Food(int id, String name, String sexo, String raca, String tipo, String idade, byte[] image) {
+    public Pet(int id, String name, String sexo, String raca, String tipo, String idade, byte[] image) {
         this.id = id;
         this.name = name;
         this.sexo = sexo;

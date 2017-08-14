@@ -25,7 +25,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -45,7 +44,7 @@ public class FoodList extends AppCompatActivity {
     private Toolbar toolbar_meusPets;
 
     ListView listView;
-    ArrayList<Food> list;
+    ArrayList<Pet> list;
     FoodListAdapter adapter = null;
 
     @Override
@@ -54,6 +53,7 @@ public class FoodList extends AppCompatActivity {
         setContentView(R.layout.food_list_activity);
 
         toolbar_meusPets = (Toolbar) findViewById(R.id.toolbar_MeusPets);
+        toolbar_meusPets.setTitle("Meus Pets");
         setSupportActionBar(toolbar_meusPets);
 
         listView = (ListView) findViewById(R.id.listView11);
@@ -75,7 +75,7 @@ public class FoodList extends AppCompatActivity {
 
             byte[] image = cursor.getBlob(6);
 
-            list.add(new Food(id, name, sexo, raca, tipo, idade, image));
+            list.add(new Pet(id, name, sexo, raca, tipo, idade, image));
         }
         adapter.notifyDataSetChanged();
 
@@ -211,7 +211,7 @@ public class FoodList extends AppCompatActivity {
 
             byte[] image = cursor.getBlob(6);
 
-            list.add(new Food(id, name, sexo, raca, tipo, idade, image));
+            list.add(new Pet(id, name, sexo, raca, tipo, idade, image));
         }
         adapter.notifyDataSetChanged();
     }

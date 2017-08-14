@@ -1,8 +1,6 @@
 package com.cursoandroid.centralpet.centralpet.activity.PerfilPets;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.cursoandroid.centralpet.centralpet.R;
 
 import java.util.ArrayList;
@@ -22,9 +21,9 @@ public class FoodListAdapter extends BaseAdapter {
 
     private Context context;
     private  int layout;
-    private ArrayList<Food> foodsList;
+    private ArrayList<Pet> foodsList;
 
-    public FoodListAdapter(Context context, int layout, ArrayList<Food> foodsList) {
+    public FoodListAdapter(Context context, int layout, ArrayList<Pet> foodsList) {
         this.context = context;
         this.layout = layout;
         this.foodsList = foodsList;
@@ -74,23 +73,27 @@ public class FoodListAdapter extends BaseAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
-        Food food = foodsList.get(position);
+        Pet pet = foodsList.get(position);
 
-        holder.txtName.setText(food.getName());
-        holder.txtRaca.setText(food.getRaca());
-        holder.txtIdade.setText(food.getIdade());
+        holder.txtName.setText(pet.getName());
+        holder.txtRaca.setText(pet.getRaca());
+        holder.txtIdade.setText(pet.getIdade());
 
-        byte[] foodImage = food.getImage();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(foodImage, 0, foodImage.length);
-        holder.imageView.setImageBitmap(bitmap);
+        byte[] foodImage = pet.getImage();
+        //Bitmap bitmap = BitmapFactory.decodeByteArray(foodImage, 0, foodImage.length);
+        //holder.imageView.setImageBitmap(bitmap);
+        Glide.with(this.context)
+                .load(foodImage)
+                .asBitmap()
+                .centerCrop()
+                .into(holder.imageView);
 
-        if(food.getSexo().toString() == "Macho"){
+        if(holder.iconesexo.toString().equals("Macho")){
             holder.iconesexo.setImageResource(R.drawable.iconemasc);
         }else{
             holder.iconesexo.setImageResource(R.drawable.iconefem);
         }
-
-        if(food.getTipo().toString() == "Cão"){
+        if(holder.iconetipo.equals("Fêmea")){
             holder.iconetipo.setImageResource(R.drawable.iconecao);
         }else{
             holder.iconetipo.setImageResource(R.drawable.iconegato);

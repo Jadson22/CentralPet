@@ -25,6 +25,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.cursoandroid.centralpet.centralpet.R;
 
 import java.io.ByteArrayOutputStream;
@@ -148,8 +149,14 @@ public class CadastroMeusPets extends AppCompatActivity {
             try {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
 
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                imageView.setImageBitmap(bitmap);
+               // Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                //imageView.setImageBitmap(bitmap);
+
+                Glide.with(this)
+                        .load(uri)
+                        .asBitmap()
+                        .centerCrop()
+                        .into(imageView);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
