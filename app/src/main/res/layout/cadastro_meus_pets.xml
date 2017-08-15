@@ -34,17 +34,6 @@
         app:srcCompat="@drawable/fotoperfil"
         android:layout_alignParentLeft="true"/>
 
-        <Button
-            android:id="@+id/btnChoose"
-            android:text="Escolher imagem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="6dp"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp"
-            android:textColor="#ffffff"
-            android:background="#919191"/>
         </LinearLayout>
 
 <LinearLayout

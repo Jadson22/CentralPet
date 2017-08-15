@@ -39,7 +39,7 @@ public class CadastroMeusPets extends AppCompatActivity {
     EditText edtName, edtRaca, edtIdade;
     RadioGroup radioSexo, radioTipo;
     RadioButton rbSexoEscolhido, rbTipoEscolhido;
-    Button btnChoose, btnList;
+    Button btnList;
     ImageView imageView;
 
     final int REQUEST_CODE_GALLERY = 999;
@@ -61,7 +61,8 @@ public class CadastroMeusPets extends AppCompatActivity {
 
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS PET (Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, sexo VARCHAR, raca VARCHAR, tipo VARCHAR, idade VARCHAR, image BLOB)");
 
-        btnChoose.setOnClickListener(new View.OnClickListener() {
+
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ActivityCompat.requestPermissions(
@@ -184,12 +185,10 @@ public class CadastroMeusPets extends AppCompatActivity {
             rbTipoEscolhido = (RadioButton) findViewById(idRbTipoEscolhido);
         }
 
-        btnChoose = (Button) findViewById(R.id.btnChoose);
         btnList = (Button) findViewById(R.id.btnList);
         imageView = (ImageView) findViewById(R.id.imageView);
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
