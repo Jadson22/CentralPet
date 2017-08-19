@@ -73,6 +73,8 @@ public class FoodListAdapter extends BaseAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
+        //ERRO EM SETAR RAÇA, IDADE E OS ICONES DE SEXO E TIPO, MAS NAO CRASHA O APP
+
         Pet pet = petList.get(position);
 
         holder.textoName.setText(pet.getName());
@@ -88,12 +90,12 @@ public class FoodListAdapter extends BaseAdapter {
                 .centerCrop()
                 .into(holder.imgPerfil);
 
-        if(pet.getSexo().toString().equals("Macho")){
+        if(pet.getSexo().equals("Macho")){
             holder.iconeSexo.setImageResource(R.drawable.iconemasc);
         }else{
             holder.iconeSexo.setImageResource(R.drawable.iconefem);
         }
-        if(pet.getTipo().toString().equals("Cão")){
+        if(pet.getTipo().equals("Cão")){
             holder.iconeTipo.setImageResource(R.drawable.iconecao);
         }else{
             holder.iconeTipo.setImageResource(R.drawable.iconegato);

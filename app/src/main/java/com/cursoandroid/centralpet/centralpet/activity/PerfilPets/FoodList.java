@@ -27,6 +27,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
@@ -46,6 +48,9 @@ public class FoodList extends AppCompatActivity {
     ListView listView;
     ArrayList<Pet> list;
     FoodListAdapter adapter = null;
+
+    RadioGroup upradioSexo, upradioTipo;
+    RadioButton rbSexoEscolhido, rbTipoEscolhido;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,26 +122,41 @@ public class FoodList extends AppCompatActivity {
         });
     }
 
-    ImageView imageViewFood;
+    ImageView imgPet;
     private void showDialogUpdate(Activity activity, final int position){
 
         final Dialog dialog = new Dialog(activity);
         dialog.setContentView(R.layout.update_food_activity);
         dialog.setTitle("Editar");
 
-        imageViewFood = (ImageView) dialog.findViewById(R.id.imageViewFood);
-        final EditText edtName = (EditText) dialog.findViewById(R.id.edtName);
-        final EditText edtPrice = (EditText) dialog.findViewById(R.id.edtPrice);
-        Button btnUpdate = (Button) dialog.findViewById(R.id.btnUpdate);
+        imgPet = (ImageView) dialog.findViewById(R.id.upfoto);
+        final EditText edtName = (EditText) dialog.findViewById(R.id.upnome);
+        final EditText edtRaca = (EditText) dialog.findViewById(R.id.upraca);
+        final EditText edtIdade = (EditText) dialog.findViewById(R.id.upidade);
 
-        // set width for dialog
+      /*  upradioSexo = (RadioGroup) findViewById(R.id.upradioSexo);
+        upradioTipo = (RadioGroup) findViewById(R.id.upradioTipo);
+
+        int idRbSexoEscolhido = upradioSexo.getCheckedRadioButtonId();
+        if(idRbSexoEscolhido > 0 ){
+            rbSexoEscolhido = (RadioButton) findViewById(idRbSexoEscolhido);
+        }
+
+        int idRbTipoEscolhido = upradioTipo.getCheckedRadioButtonId();
+        if(idRbTipoEscolhido > 0 ){
+            rbTipoEscolhido = (RadioButton) findViewById(idRbTipoEscolhido);
+        }
+        */
+
+        Button btnUpdate = (Button) dialog.findViewById(R.id.btn_up);
+
+        // tamanho do dialog
         int width = (int) (activity.getResources().getDisplayMetrics().widthPixels * 0.95);
-        // set height for dialog
         int height = (int) (activity.getResources().getDisplayMetrics().heightPixels * 0.7);
         dialog.getWindow().setLayout(width, height);
         dialog.show();
 
-        imageViewFood.setOnClickListener(new View.OnClickListener() {
+        imgPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // request photo library
@@ -154,8 +174,11 @@ public class FoodList extends AppCompatActivity {
                 try {
                     CadastroMeusPets.sqLiteHelper.updateData(
                             edtName.getText().toString().trim(),
-                            edtPrice.getText().toString().trim(),
-                            CadastroMeusPets.imageViewToByte(imageViewFood),
+                            "Macho",
+                            edtRaca.getText().toString().trim(),
+                            "Cão",
+                            edtIdade.getText().toString().trim(),
+                            CadastroMeusPets.imageViewToByte(imgPet),
                             position
                     );
                     dialog.dismiss();
@@ -179,7 +202,7 @@ public class FoodList extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 try {
                     CadastroMeusPets.sqLiteHelper.deleteData(idFood);
-                    Toast.makeText(getApplicationContext(), null, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Apagado", Toast.LENGTH_SHORT).show();
                 } catch (Exception e){
                     Log.e("error", e.getMessage());
                 }
@@ -241,7 +264,7 @@ public class FoodList extends AppCompatActivity {
             try {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                imageViewFood.setImageBitmap(bitmap);
+                imgPet.setImageBitmap(bitmap);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
