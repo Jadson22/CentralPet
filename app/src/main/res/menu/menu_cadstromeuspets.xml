@@ -7,6 +7,6 @@
     <item android:id="@+id/adicionar"
         android:title="ADICIONAR"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>
 
 </menu>

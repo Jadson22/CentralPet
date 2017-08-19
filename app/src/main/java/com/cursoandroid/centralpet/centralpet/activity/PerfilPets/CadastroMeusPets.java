@@ -27,6 +27,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.cursoandroid.centralpet.centralpet.R;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -152,7 +154,6 @@ public class CadastroMeusPets extends AppCompatActivity {
 
                // Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 //imageView.setImageBitmap(bitmap);
-
                 Glide.with(this)
                         .load(uri)
                         .asBitmap()

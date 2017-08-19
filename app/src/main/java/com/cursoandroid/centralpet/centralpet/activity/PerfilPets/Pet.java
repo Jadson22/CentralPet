@@ -7,19 +7,19 @@ package com.cursoandroid.centralpet.centralpet.activity.PerfilPets;
 public class Pet {
     private int id;
     private String name;
-    private String sexo;
     private String raca;
-    private String tipo;
     private String idade;
+    private String sexo;
+    private String tipo;
     private byte[] image;
 
-    public Pet(int id, String name, String sexo, String raca, String tipo, String idade, byte[] image) {
+    public Pet(int id, String name, String raca, String idade, String sexo, String tipo, byte[] image) {
         this.id = id;
         this.name = name;
-        this.sexo = sexo;
         this.raca = raca;
-        this.tipo = tipo;
         this.idade = idade;
+        this.sexo = sexo;
+        this.tipo = tipo;
         this.image = image;
     }
 

@@ -1,6 +1,7 @@
 package com.cursoandroid.centralpet.centralpet.activity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.cursoandroid.centralpet.centralpet.R;
 import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.CadastroMeusPets;
+import com.cursoandroid.centralpet.centralpet.activity.PerfilPets.FoodList;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.auth.api.Auth;

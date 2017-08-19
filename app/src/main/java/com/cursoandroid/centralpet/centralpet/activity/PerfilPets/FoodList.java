@@ -83,10 +83,10 @@ public class FoodList extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                CharSequence[] items = {"Update", "Delete"};
+                CharSequence[] items = {"Editar", "Apagar"};
                 AlertDialog.Builder dialog = new AlertDialog.Builder(FoodList.this);
 
-                dialog.setTitle("Choose an action");
+                dialog.setTitle("Escolha uma ação");
                 dialog.setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
@@ -122,7 +122,7 @@ public class FoodList extends AppCompatActivity {
 
         final Dialog dialog = new Dialog(activity);
         dialog.setContentView(R.layout.update_food_activity);
-        dialog.setTitle("Update");
+        dialog.setTitle("Editar");
 
         imageViewFood = (ImageView) dialog.findViewById(R.id.imageViewFood);
         final EditText edtName = (EditText) dialog.findViewById(R.id.edtName);
@@ -159,7 +159,7 @@ public class FoodList extends AppCompatActivity {
                             position
                     );
                     dialog.dismiss();
-                    Toast.makeText(getApplicationContext(), "Update successfully!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Editado com sucesso!", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception error) {
                     Log.e("Update error", error.getMessage());
@@ -172,14 +172,14 @@ public class FoodList extends AppCompatActivity {
     private void showDialogDelete(final int idFood){
         final AlertDialog.Builder dialogDelete = new AlertDialog.Builder(FoodList.this);
 
-        dialogDelete.setTitle("Warning!!");
-        dialogDelete.setMessage("Are you sure you want to this delete?");
+        dialogDelete.setTitle("Atenção!");
+        dialogDelete.setMessage("Apagar Pet?");
         dialogDelete.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
                     CadastroMeusPets.sqLiteHelper.deleteData(idFood);
-                    Toast.makeText(getApplicationContext(), "Delete successfully!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), null, Toast.LENGTH_SHORT).show();
                 } catch (Exception e){
                     Log.e("error", e.getMessage());
                 }
@@ -187,7 +187,7 @@ public class FoodList extends AppCompatActivity {
             }
         });
 
-        dialogDelete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        dialogDelete.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -226,7 +226,7 @@ public class FoodList extends AppCompatActivity {
                 startActivityForResult(intent, 888);
             }
             else {
-                Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Você não tem permissão para acessar os arquivos!", Toast.LENGTH_SHORT).show();
             }
             return;
         }

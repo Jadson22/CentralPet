@@ -149,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:text="Gato"
                     android:id="@+id/rbGato"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
             </RadioGroup>
         </RelativeLayout>

@@ -21,22 +21,22 @@ public class FoodListAdapter extends BaseAdapter {
 
     private Context context;
     private  int layout;
-    private ArrayList<Pet> foodsList;
+    private ArrayList<Pet> petList;
 
-    public FoodListAdapter(Context context, int layout, ArrayList<Pet> foodsList) {
+    public FoodListAdapter(Context context, int layout, ArrayList<Pet> petList) {
         this.context = context;
         this.layout = layout;
-        this.foodsList = foodsList;
+        this.petList = petList;
     }
 
     @Override
     public int getCount() {
-        return foodsList.size();
+        return petList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return foodsList.get(position);
+        return petList.get(position);
     }
 
     @Override
@@ -45,8 +45,8 @@ public class FoodListAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
-        ImageView imageView, iconesexo, iconetipo;
-        TextView txtName, txtRaca, txtIdade;
+        ImageView imgPerfil, iconeSexo, iconeTipo;
+        TextView textoName, textoRaca, textoIdade;
     }
 
     @Override
@@ -59,13 +59,13 @@ public class FoodListAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout, null);
 
-            holder.txtName = (TextView) row.findViewById(R.id.textoName);
-            holder.txtRaca = (TextView) row.findViewById(R.id.textoRaca);
-            holder.txtIdade = (TextView) row.findViewById(R.id.textoIdade);
-            holder.imageView = (ImageView) row.findViewById(R.id.imgPerfil);
+            holder.textoName = (TextView) row.findViewById(R.id.textoName);
+            holder.textoRaca = (TextView) row.findViewById(R.id.textoRaca);
+            holder.textoIdade = (TextView) row.findViewById(R.id.textoIdade);
+            holder.imgPerfil = (ImageView) row.findViewById(R.id.imgPerfil);
 
-            holder.iconesexo = (ImageView) row.findViewById(R.id.iconeSexo);
-            holder.iconetipo = (ImageView) row.findViewById(R.id.iconeTipo);
+            holder.iconeSexo = (ImageView) row.findViewById(R.id.iconeSexo);
+            holder.iconeTipo = (ImageView) row.findViewById(R.id.iconeTipo);
 
             row.setTag(holder);
         }
@@ -73,11 +73,11 @@ public class FoodListAdapter extends BaseAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
-        Pet pet = foodsList.get(position);
+        Pet pet = petList.get(position);
 
-        holder.txtName.setText(pet.getName());
-        holder.txtRaca.setText(pet.getRaca());
-        holder.txtIdade.setText(pet.getIdade());
+        holder.textoName.setText(pet.getName());
+        holder.textoRaca.setText(pet.getRaca());
+        holder.textoIdade.setText(pet.getIdade());
 
         byte[] foodImage = pet.getImage();
         //Bitmap bitmap = BitmapFactory.decodeByteArray(foodImage, 0, foodImage.length);
@@ -86,17 +86,17 @@ public class FoodListAdapter extends BaseAdapter {
                 .load(foodImage)
                 .asBitmap()
                 .centerCrop()
-                .into(holder.imageView);
+                .into(holder.imgPerfil);
 
-        if(holder.iconesexo.toString().equals("Macho")){
-            holder.iconesexo.setImageResource(R.drawable.iconemasc);
+        if(pet.getSexo().toString().equals("Macho")){
+            holder.iconeSexo.setImageResource(R.drawable.iconemasc);
         }else{
-            holder.iconesexo.setImageResource(R.drawable.iconefem);
+            holder.iconeSexo.setImageResource(R.drawable.iconefem);
         }
-        if(holder.iconetipo.equals("Fêmea")){
-            holder.iconetipo.setImageResource(R.drawable.iconecao);
+        if(pet.getTipo().toString().equals("Cão")){
+            holder.iconeTipo.setImageResource(R.drawable.iconecao);
         }else{
-            holder.iconetipo.setImageResource(R.drawable.iconegato);
+            holder.iconeTipo.setImageResource(R.drawable.iconegato);
         }
 
         return row;

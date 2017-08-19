@@ -6,22 +6,6 @@
     tools:context="com.cursoandroid.centralpet.centralpet.activity.ListVacinas"
     android:background="@drawable/fundo_principal">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
             <include layout="@layout/toolbar"
                 android:id="@+id/toolbar_listVacinas"/>
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/listView2"
-                android:layout_below="@id/toolbar_listVacinas"/>
-
-
-        </RelativeLayout>
-    </ScrollView>
 </RelativeLayout>
