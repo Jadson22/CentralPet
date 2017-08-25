@@ -24,15 +24,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity { //implements GoogleApiClient.OnConnectionFailedListener {
 
-    //private LoginButton loginButton;
-    //private CallbackManager callbackManager;
+/*
     private GoogleApiClient googleApiClient;
     private SignInButton signInButton;
     public static final int SIGN_IN_CODE = 777;
     private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    private FirebaseAuth.AuthStateListener firebaseAuthListener; */
 
     private ProgressBar progressBar;
 
@@ -41,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -96,8 +97,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //Toast.makeText(getApplicationContext(), "Ocorreu um erro ao entrar", Toast.LENGTH_SHORT).show();
         //}
         //});
+
+    */
+
     }
 
+        /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -162,4 +167,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
         }
     }
+
+    */
+
 }

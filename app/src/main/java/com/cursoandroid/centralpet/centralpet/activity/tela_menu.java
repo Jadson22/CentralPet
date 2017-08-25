@@ -27,7 +27,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class tela_menu extends AppCompatActivity {//implements GoogleApiClient.OnConnectionFailedListener {
 
     private AdView adView;
 
@@ -41,9 +41,9 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
     private ImageView meusPets;
     private ImageView clinicas;
 
-    private GoogleApiClient googleApiClient;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    //private GoogleApiClient googleApiClient;
+    //private FirebaseAuth firebaseAuth;
+    //private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
         //    goLoginScreen();
         //}
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /*GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
@@ -88,7 +88,7 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
                 }
             }
         };
-
+*/
 
 
         //chamar a agenda
@@ -158,7 +158,7 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
         adView.loadAd(adRequest);
     }
 
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -171,7 +171,7 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
        startActivity(intent);
     }
-
+*/
 
     //toolbar
     @Override
@@ -184,13 +184,15 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case R.id.action_deslogar:
-        deslogar_usuario();
+        //deslogar_usuario();
         return true;
         default:
         return super.onOptionsItemSelected(item);
         }
 
     }
+
+    /*
         public void deslogar_usuario(){
         //LoginManager.getInstance().logOut();
 
@@ -219,6 +221,8 @@ public class tela_menu extends AppCompatActivity implements GoogleApiClient.OnCo
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
         }
     }
+
+    */
 }
 
 
