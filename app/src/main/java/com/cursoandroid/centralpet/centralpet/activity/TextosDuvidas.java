@@ -39,7 +39,7 @@ public class TextosDuvidas extends AppCompatActivity {
                 titulo.setText("V8 ou V10");
                 texto.setText("");
             }else if(opcaoescolhida.equals("op3")){
-                titulo.setText("");
+                titulo.setText("Tosse");
                 texto.setText("");
             }else if(opcaoescolhida.equals("op4")){
                 titulo.setText("");
