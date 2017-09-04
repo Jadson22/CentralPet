@@ -117,17 +117,17 @@ public class Duvidas_freq extends AppCompatActivity {
 
         //cria os grupos
         List<String> lstgrupos = new ArrayList<>();
-        lstgrupos.add("Vacinas - Cães");
-        lstgrupos.add("Vacinas - Gatos");
+        lstgrupos.add("Vacinação");
+        lstgrupos.add("Doenças");
         lstgrupos.add("Doenças");
         lstgrupos.add("Alimentação");
 
         //cria os itens de cada grupo
         List<info_duv> lstVacinasCaes = new ArrayList<>();
-        lstVacinasCaes.add(new info_duv("Vermífugo", ""));
-        lstVacinasCaes.add(new info_duv("Anti-pulgas", ""));
-        lstVacinasCaes.add(new info_duv("V8 ou V10", ""));
-        lstVacinasCaes.add(new info_duv("Tosse", ""));
+        lstVacinasCaes.add(new info_duv("Tabela de vacinação-Cães", ""));
+        lstVacinasCaes.add(new info_duv("Tabela de vacinação-Gatos", ""));
+        lstVacinasCaes.add(new info_duv("Reações", ""));
+        lstVacinasCaes.add(new info_duv("Recomendações", ""));
         lstVacinasCaes.add(new info_duv("Anti-rábica", ""));
         lstVacinasCaes.add(new info_duv("Giardíase", ""));
         lstVacinasCaes.add(new info_duv("Gripe canina", ""));
